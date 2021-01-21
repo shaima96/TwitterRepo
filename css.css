@@ -26,18 +26,22 @@ body{
     border:1px #42a7f5 solid; 
     border-radius: 33px;
     color:#42a7f5;
-    height:50px;
+    height:7vh;
+    width:25vw;
 }
 .btnblue{
     background-color: #42a7f5;
-    border:1px white solid; 
+    border:0px transparent solid; 
     border-radius: 33px;
     color:white;
-    height:50px;
+    height:7vh;
+    width:25vw;
 }
 .btnblue:hover{
     background-color: #3f90ce;
+    transition: 0.5s;
 }
 .btnwhite:hover{
     background-color: #8fc7f16c;
+    transition: 0.5s;
 }
