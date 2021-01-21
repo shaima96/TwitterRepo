@@ -1,0 +1,23 @@
+body{
+    min-height: 100vh;
+    background-image: url("https://i.imgur.com/2QEzt8c.png");
+    background-repeat: no-repeat;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+}
+.row{
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: row;
+}
+.col{
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.white{
+    color:'white'
+}
