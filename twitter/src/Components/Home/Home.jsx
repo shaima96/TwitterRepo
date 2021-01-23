@@ -34,8 +34,13 @@ class Home extends React.Component {
                             <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
                         </div>
                         <h1>See what’s happening in <br/>the world right now</h1>
+<<<<<<< HEAD
                         <h4>Join Twitter today.</h4>
                         <br/>
+=======
+                        <br/>
+                        <h4>Join Twitter today.</h4>
+>>>>>>> dc97b3f4bbf884b344bb58b36803ebd9f9eac003
                         <br/>
                         <button className="btn">Sign Up</button>
                         <button className="btn1">Log in</button>
