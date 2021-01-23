@@ -11,11 +11,13 @@
     transition: color 100ms ease-out;
   }
   
-  .sidebarOption {
-    padding: 20px;;
+  .sidebarOption  {
+    padding: 20px;
   }
-  /* .icon {
-      padding-right: 3px;
+
+  
+  /* .MuiSvgIcon-root {
+    padding: 20px;
   } */
   
   .sidebarOption > h2 {
