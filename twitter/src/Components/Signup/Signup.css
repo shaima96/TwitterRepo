@@ -1,0 +1,258 @@
+
+.container_image{
+    background-image: url('https://i.imgur.com/JZhu0DU.png');
+  display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container_signup{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background:white padding-box;
+	box-shadow: 3px 4px 15px #0000001A;
+	border-radius: 30px;
+    width: 50%;
+    height: 550px;
+    margin-left: 300px;
+    }
+
+  .div_button img{
+      margin-left: 300px;
+  }
+.div_button .button{
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: #1da1f2;
+    height: 32px;
+    width:90px;
+    border: #1da1f2;
+    margin-left: 500px;
+    margin-top:-90px;
+    
+}
+ 
+.div_button .button:hover{
+   color:white;
+   background-color: #2596be;
+}
+
+.div_form h2{
+    font-size:25px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+.div_form h5{
+    font-size:15px;
+    margin-left: 30px;
+    color: #1da1f2;
+    font-weight: 100;
+   
+}
+.div_form h4{
+    font-size:20px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+.div_form p{
+    font-size:16px;
+    font-weight: 400;
+    width: 600px;
+    margin-left: 30px;
+    color: gray;
+    text-align: left;
+}
+
+.signup .Input{
+    width: 550px;
+    color: black;
+    margin-left: 30px;
+
+    
+}
+.signup .Input:hover{
+  
+    color: black;
+    font-weight: bold;
+    border: #1da1f2;
+}
+
+.div_form{
+    margin-top:10px;
+
+}
+
+
+/*Date css*/
+.container_date #day_form{
+    width: 300px;
+}
+.container_date{
+    margin-left: 26px;
+}
+
+/*Forget password*/
+
+.Container_forget{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+.detail{
+    /* background:white padding-box;
+	box-shadow: 3px 4px 15px #0000001A;
+	border-radius: 5px;
+    width: 100%; */
+    /* height: 60px; */
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+}
+.detail img{
+    margin-left: 480px;
+    margin-top: 10px;
+}
+.detail h4{
+    margin-right: 100px;
+    color: gray;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top:20px;
+}
+
+.details{
+    margin-left: 500px;
+    margin-top: 30px;
+}
+.details h1{
+    font-size: 30px;
+}
+
+.details h3{
+    font-size: 15px;
+    color:black;
+    font-weight: 300;
+}
+
+.details .search_input{
+    font-size: 15px;
+    margin-right: 140px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: black;
+    width: 67%;
+    height: 50px;
+    border:#1da1f2;
+}
+.details .search_input:hover{
+   background-color: white;
+   border: #1da1f2;
+}
+
+.details .search{
+    font-size: 16px;
+    margin-left: 5px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: #1da1f2;
+    width: 19%;
+    height: 35px;
+    text-transform: lowercase;
+}
+
+.details .search:hover{
+   background-color: #2596be;
+}
+
+/*Form 2*/
+.container_form2{
+ display: inline-block;
+align-items: center;
+justify-content: center;
+background:white padding-box;
+box-shadow: 3px 4px 15px #0000001A;
+border-radius: 50px;
+width: 40%;
+height: 500px;
+margin-top: 30px;
+margin-left: 400px;
+}
+
+
+.form2_button{
+    display: flex;
+}
+.form2_button #back{
+    display: block;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.form2_button #twitter{
+    display: block;
+    margin-left: 150px;
+    margin-top: 10px;
+}
+.form2_button .button{
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color:#2596be;
+    height: 30px;
+    width:90px;
+    border: #1da1f2;
+    display: block;
+    margin-left: 130px;
+    margin-top:22px;
+    }
+.form2_button.button:hover{
+    color:white;
+    background-color: #2596be;
+}
+.div_form2{
+    margin-top: 20px;
+}
+.div_form2 h2{
+    font-size: 25px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+.div_form2 h3{
+    font-size: 17px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+.div_form2 p{
+    font-size:15px;
+    font-weight: 400;
+    width: 500px;
+    margin-left: 30px;
+    color:black;
+    text-align: left;
+}
+.div_form2 h4{
+    font-size:16px;
+    font-weight: 400;
+    width: 600px;
+    margin-left: 4px;
+    color:gray;
+    text-align: left;
+}
+.div_form2 h4 a{
+    color: #1da1f2;
+    font-size: 15px;
+    text-decoration: none;
+ 
+}
+.div_form2 h4 a:hover{
+    color: #1da1f2;
+    text-decoration: underline;
+
+}

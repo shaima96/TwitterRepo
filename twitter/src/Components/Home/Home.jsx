@@ -1,5 +1,10 @@
 import React from 'react';
 import './Home.css'
+import { Link } from 'react-router-dom'
+// import RegisterDialog from '../Signup/RegisterDialog'
+
+
+
 
 
 
@@ -37,8 +42,12 @@ class Home extends React.Component {
                         <br/>
                         <h4>Join Twitter today.</h4>
                         <br/>
+                        <Link  to='/signup' style={{ textDecoration: 'none' }}>
                         <button className="btn">Sign Up</button>
+                        </Link>
+                        <Link  to='/login' style={{ textDecoration: 'none' }}>
                         <button className="btn1">Log in</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="bottom">
