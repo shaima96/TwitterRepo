@@ -1,6 +1,7 @@
 import React from 'react';
 import './Signup.css'
 import { Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 
 class FormTwo extends React.Component {
@@ -19,8 +20,9 @@ class FormTwo extends React.Component {
                         <img  id='back'src='https://www.flaticon.com/svg/vstatic/svg/786/786399.svg?token=exp=1611349384~hmac=aeb9533bff962d5f72fc04add3e38f6a' width='40px' height='40px' />
                     </a>
                     <img  id='twitter'src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="60px" height="60px" />
+                    <Link  to='/form3' style={{ textDecoration: 'none' }}>
                     <Button type='submit' className='button' > Next</Button>
-                </div>
+                    </Link>                </div>
                 <div className='div_form2'>
                     <h2>Customize your experience</h2>
                     <br/>
