@@ -162,26 +162,38 @@ height: 650px;
 margin-top: 90px;
 }
 
+
 .form2_button{
     display: flex;
     /* background-color: aquamarine; */
 }
-.form2_button Button{
+.form2_button #back{
+    display: block;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.form2_button #twitter{
+    display: block;
+    margin-left: 250px;
+    margin-top: 10px;
+}
+.form2_button .button{
     font-size: 18px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
     color: white;
-    background-color: #1da1f2;
+    background-color:#2596be;
     height: 40px;
     width:100px;
     border: #1da1f2;
-    margin-left: 480px;
-    margin-bottom:-30px;
+    display: block;
+    margin-left: 220px;
+    margin-top:22px;
     }
-.div_form2 .button:hover{
-   color:white;
-   background-color: #2596be;
+.form2_button.button:hover{
+    color:white;
+    background-color: #2596be;
 }
 .div_form2 h2{
     font-size: 30px;

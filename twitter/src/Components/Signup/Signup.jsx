@@ -56,7 +56,7 @@ class Signup extends React.Component {
                             variant="outlined"
                             required
                         />
-                        <h5>Use email instead</h5>
+                        <h5>Use phone instead</h5>
                         <h4>Date of Birth</h4>
                         <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
                         <Date onChange={this.handleChange} value={dateOfBirth} />

@@ -49,22 +49,26 @@ body,html{
 
 .container .right .card{
    margin-left: 200px;
+   margin-bottom: 100px;
 }
 
 .container .right .card .image{
  display: flex;
  justify-content: space-between;
  margin-left: -20px;
+ /* margin-bottom: 100px; */
 }
 
 .container .right .card h1{
-   font-size: 27px;
-   line-height: 32px;
+   font-size: 40px;
+   line-height: 50px;
    color: black;
-   margin-right: 100px;
+   margin-right: 250px;
+   direction: ltr;
+   text-align: left;
    }
    .container .right .card p{
-    font-size: 18px;
+    font-size: 22px;
     line-height: 32px;
     color: black;
     font-weight: bold;
@@ -73,17 +77,17 @@ body,html{
    
 button.btn{
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
     color: white;
     background-color: #1da1f2;
-    width: 60%;
-    height: 50px;
+    width: 70%;
+    height: 60px;
     border: none;
     outline: none;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
 }
 button.btn:hover{
     background-color:#2596be;
@@ -91,14 +95,14 @@ button.btn:hover{
 }
 button.btn1{
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
     color:#1da1f2;
     background-color: white;
-    width: 60%;
-    height: 50px;
+    width: 70%;
+    height: 60px;
     border: none;
     outline: none;
     border:1px  solid #1da1f2;
@@ -117,16 +121,19 @@ button.btn1:hover{
 
 .container .bottom ul{
     text-align: center;
-    color: #aab8ca
+    color: #aab8ca;
+   
 }
 .container .bottom ul li{
     display: inline-block;
-margin: 0 5px;
+margin: 0 6px;
+
 }
 .container .bottom ul li a{
     text-decoration: none;
-    font-size: 15px;
-    color: #aab8ca
+    font-size: 18px;
+    color:gray;
+    font-weight: 300;
 }
 
 .container .bottom ul li a:hover{
