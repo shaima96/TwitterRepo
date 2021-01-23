@@ -9,7 +9,8 @@ import FormTwo from '../src/Components/Signup/form2'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
+   
       <Switch>
           <Route exact path='/'  component={Home} />
           <Route exact path='/signup'  component={Signup} />
