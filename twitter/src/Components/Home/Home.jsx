@@ -22,7 +22,7 @@ class Home extends React.Component {
                             Follow your interests.
                         </li>
                         <li className='fas fa-users-friends icon'>
-                        Hear what people are talking about.
+                            Hear what people are talking about.
                         </li>
                         <li className='join'>
                             Join the conversation.
@@ -94,7 +94,7 @@ class Home extends React.Component {
                             <a href='#'>Settings</a>
                         </li>
                         <li>
-                            <a href='#'>© 2021 Twitter, Inc</a>
+                            © 2021 Twitter, Inc.
                         </li>
 
                     </ul>
