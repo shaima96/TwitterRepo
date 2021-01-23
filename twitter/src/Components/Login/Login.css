@@ -2,16 +2,25 @@
 display: inline-block;
 align-items: center;
 justify-content: center;
-margin-top: 90px;
+margin-top: 65px;
+margin-left: 400px;
 }
 
+.container_login img{
+margin-left: 200px;
+}
+
+.container_login h1{
+    font-size: 25px;
+    margin-left: 130px;
+    font-weight: bold;
+}
 .login .Input{
     width: 500px;
     color: black;
     
 }
 .login .Input:hover{
-  
     color: black;
     font-weight: bold;
     border: #1da1f2;
@@ -35,8 +44,8 @@ margin-top: 90px;
 .login #password{
     color: #1da1f2;
     font-weight: 100;
-    margin-right: 170px;
-    font-size: 18px;
+    margin-left: 120px;
+    font-size: 16px;
 }
 .login #password:hover{
    text-decoration: underline;
@@ -44,9 +53,9 @@ margin-top: 90px;
 .login #signup{
     color: #1da1f2;
     font-weight: 100;
-    margin-left: 110px;
-    font-size: 18px;
-    margin-top: -47px;
+    margin-left: 260px;
+    font-size: 16px;
+    margin-top: -20px;
 }
 
 .login #signup:hover{

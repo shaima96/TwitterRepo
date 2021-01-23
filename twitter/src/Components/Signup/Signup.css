@@ -1,16 +1,27 @@
+
+.container_image{
+    background-image: url('https://i.imgur.com/JZhu0DU.png');
+  display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container_signup{
     display: inline-block;
     align-items: center;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 30px;
     background:white padding-box;
 	box-shadow: 3px 4px 15px #0000001A;
 	border-radius: 30px;
-    width: 40%;
-    height: 650px;
+    width: 50%;
+    height: 550px;
+    margin-left: 300px;
     }
 
-  
+  .div_button img{
+      margin-left: 300px;
+  }
 .div_button .button{
     font-size: 18px;
     line-height: 20px;
@@ -18,11 +29,11 @@
     font-weight: bold;
     color: white;
     background-color: #1da1f2;
-    height: 40px;
-    width:100px;
+    height: 32px;
+    width:90px;
     border: #1da1f2;
-    margin-left: 580px;
-    margin-top:-100px;
+    margin-left: 500px;
+    margin-top:-90px;
     
 }
  
@@ -32,33 +43,35 @@
 }
 
 .div_form h2{
-    font-size:30px;
+    font-size:25px;
     font-weight: bold;
-    margin-right: 330px;
+    margin-left: 30px;
 }
 .div_form h5{
     font-size:15px;
-    margin-right: 480px;
+    margin-left: 30px;
     color: #1da1f2;
     font-weight: 100;
+   
 }
 .div_form h4{
     font-size:20px;
     font-weight: bold;
-    margin-right: 460px;
+    margin-left: 30px;
 }
 .div_form p{
-    font-size:18px;
+    font-size:16px;
     font-weight: 400;
     width: 600px;
-    margin-left: 70px;
+    margin-left: 30px;
     color: gray;
     text-align: left;
 }
 
 .signup .Input{
-    width: 600px;
+    width: 550px;
     color: black;
+    margin-left: 30px;
 
     
 }
@@ -71,6 +84,7 @@
 
 .div_form{
     margin-top:10px;
+
 }
 
 
@@ -78,24 +92,29 @@
 .container_date #day_form{
     width: 300px;
 }
+.container_date{
+    margin-left: 26px;
+}
 
 /*Forget password*/
 
-.ontainer_forget{
+.Container_forget{
     display: inline-block;
     align-items: center;
     justify-content: center;
 }
 .detail{
-    background:white padding-box;
+    /* background:white padding-box;
 	box-shadow: 3px 4px 15px #0000001A;
 	border-radius: 5px;
-    width: 100%;
-    height: 60px;
-    display: flex;
+    width: 100%; */
+    /* height: 60px; */
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
 }
 .detail img{
-    margin-left: 600px;
+    margin-left: 480px;
     margin-top: 10px;
 }
 .detail h4{
@@ -106,14 +125,16 @@
     margin-top:20px;
 }
 
+.details{
+    margin-left: 500px;
+    margin-top: 30px;
+}
 .details h1{
-    font-size: 40px;
-    margin-right: 120px;
+    font-size: 30px;
 }
 
 .details h3{
     font-size: 15px;
-    margin-right: 300px;
     color:black;
     font-weight: 300;
 }
@@ -124,7 +145,7 @@
     border-radius: 100px;
     font-weight: bold;
     color: black;
-    width: 25%;
+    width: 67%;
     height: 50px;
     border:#1da1f2;
 }
@@ -135,13 +156,13 @@
 
 .details .search{
     font-size: 16px;
-    margin-right: 480px;
+    margin-left: 5px;
     border-radius: 100px;
     font-weight: bold;
     color: white;
     background-color: #1da1f2;
-    width: 6%;
-    height: 40px;
+    width: 19%;
+    height: 35px;
     text-transform: lowercase;
 }
 
@@ -158,14 +179,14 @@ background:white padding-box;
 box-shadow: 3px 4px 15px #0000001A;
 border-radius: 50px;
 width: 40%;
-height: 650px;
-margin-top: 90px;
+height: 500px;
+margin-top: 30px;
+margin-left: 400px;
 }
 
 
 .form2_button{
     display: flex;
-    /* background-color: aquamarine; */
 }
 .form2_button #back{
     display: block;
@@ -174,56 +195,59 @@ margin-top: 90px;
 }
 .form2_button #twitter{
     display: block;
-    margin-left: 250px;
+    margin-left: 150px;
     margin-top: 10px;
 }
 .form2_button .button{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
     color: white;
     background-color:#2596be;
-    height: 40px;
-    width:100px;
+    height: 30px;
+    width:90px;
     border: #1da1f2;
     display: block;
-    margin-left: 220px;
+    margin-left: 130px;
     margin-top:22px;
     }
 .form2_button.button:hover{
     color:white;
     background-color: #2596be;
 }
+.div_form2{
+    margin-top: 20px;
+}
 .div_form2 h2{
-    font-size: 30px;
-    margin-right: 250px;
+    font-size: 25px;
+    margin-left: 30px;
     font-weight: bold;
 }
 .div_form2 h3{
-    font-size: 20px;
-    margin-right: 140px;
+    font-size: 17px;
+    margin-left: 30px;
     font-weight: bold;
 }
 .div_form2 p{
-    font-size:18px;
+    font-size:15px;
     font-weight: 400;
-    width: 600px;
-    margin-left: 53px;
+    width: 500px;
+    margin-left: 30px;
     color:black;
     text-align: left;
 }
 .div_form2 h4{
-    font-size:18px;
+    font-size:16px;
     font-weight: 400;
     width: 600px;
-    margin-left: 5px;
+    margin-left: 4px;
     color:gray;
     text-align: left;
 }
 .div_form2 h4 a{
     color: #1da1f2;
-    font-size: 20px;
+    font-size: 15px;
     text-decoration: none;
  
 }

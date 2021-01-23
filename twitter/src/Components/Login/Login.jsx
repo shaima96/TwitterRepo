@@ -21,7 +21,7 @@ class Login extends React.Component {
         const { email, password } = this.state
         return (
             <div className='container_login'>
-                <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
+                <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="50px" height="50px" />
                 <br />
                 <h1>Log in to Twitter</h1>
                 <br />

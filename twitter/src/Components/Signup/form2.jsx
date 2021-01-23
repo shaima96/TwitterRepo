@@ -23,7 +23,10 @@ class FormTwo extends React.Component {
                 </div>
                 <div className='div_form2'>
                     <h2>Customize your experience</h2>
+                    <br/>
+                    <br/>
                     <h3>Track where you see Twitter content across the web</h3>
+                    <br/>
                     <p>Twitter uses this data to personalize your experience. This web browsing history will never be stored with your name, email, or phone number.
                        <br />
                         <br />

@@ -20,6 +20,7 @@ class Forget extends React.Component {
                 </div>
                 <div className='details'>
                     <h1>Find your Twitter account</h1>
+                    <br/>
                     <h3>Enter your email, phone number, or username.</h3>
                     <br/>
                     <TextField className='search_input'

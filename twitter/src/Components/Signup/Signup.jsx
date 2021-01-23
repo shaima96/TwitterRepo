@@ -26,15 +26,17 @@ class Signup extends React.Component {
 
         const { name, email, dateOfBirth } = this.state
         return (
+            <div className='container_image'>
             <div className='container_signup'>
                 <div className='div_button'>
-                    <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="70px" height="70px" />
+                    <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="60px" height="60px" />
                     <Link  to='/form2' style={{ textDecoration: 'none' }}>
                     <Button type='submit' className='button' > Next</Button>
                     </Link>
                 </div>
                 <div className='div_form'>
                     <h2>Create your account</h2>
+                    <br/>
                     <form className='signup' >
                         <TextField className='Input'
                             label='name'
@@ -56,12 +58,18 @@ class Signup extends React.Component {
                             variant="outlined"
                             required
                         />
+                        <br/>
+                        <br/>
                         <h5>Use phone instead</h5>
+                        <br/>
+                        <br/>
                         <h4>Date of Birth</h4>
                         <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
+                        <br/>
                         <Date onChange={this.handleChange} value={dateOfBirth} />
                     </form>
                 </div>
+            </div>
             </div>
 
         )
