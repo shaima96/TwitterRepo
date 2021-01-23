@@ -4,6 +4,8 @@
 body,html{
     margin: 0;
     padding: 0;
+    background-image: url("https://i.imgur.com/kEi7iVt.png");
+    background-repeat: no-repeat; 
 }
 
 .container{
@@ -14,42 +16,37 @@ body,html{
 }
 
 .container .left{
-  background-color: #1da1f2; 
   grid-column: 1 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-repeat: no-repeat; 
-    
 }
 
 .container .left ul .follow{
-    margin-right: 140px;
+    margin-top: 52px;
+    margin-right: 130px;
 }
 .container .left ul .join{
-    margin-right: 140px;
+    margin-right: 120px;
 
 }
 .container .left ul li {
     list-style-type: none;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 24px;
     font-weight: bold;
-    margin: 30px 0px;
+    margin: 43px 0px;
     color: white;
 }
-
 .container .right{
     grid-column: 2 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .container .right .card{
-   margin-left: 200px;
-   margin-bottom: 100px;
+   margin-left: 80px;
 }
 
 .container .right .card .image{
@@ -63,17 +60,15 @@ body,html{
    font-size: 40px;
    line-height: 50px;
    color: black;
-   margin-right: 250px;
-   direction: ltr;
-   text-align: left;
-   }
-   .container .right .card p{
-    font-size: 22px;
+   margin-right: 150px;
+}
+.container .right .card p{
+    font-size: 18px;
     line-height: 32px;
     color: black;
     font-weight: bold;
     margin-right: 500px;
-    }
+}
    
 button.btn{
     display: block;
@@ -83,8 +78,8 @@ button.btn{
     font-weight: bold;
     color: white;
     background-color: #1da1f2;
-    width: 70%;
-    height: 60px;
+    width: 28vw;
+    height: 50px;
     border: none;
     outline: none;
     margin-bottom: 0.8rem;
@@ -101,8 +96,8 @@ button.btn1{
     font-weight: bold;
     color:#1da1f2;
     background-color: white;
-    width: 70%;
-    height: 60px;
+    width: 28vw;
+    height: 50px;
     border: none;
     outline: none;
     border:1px  solid #1da1f2;
@@ -116,27 +111,25 @@ button.btn1:hover{
 }
 .container .bottom{
     grid-column: 1 / -1;
-    border-top:1px solid  #aab8ca ;
 }
 
 .container .bottom ul{
     text-align: center;
-    color: #aab8ca;
-   
+    color: #7c8796
 }
 .container .bottom ul li{
     display: inline-block;
-margin: 0 6px;
-
+    margin: 0 5px;
 }
 .container .bottom ul li a{
     text-decoration: none;
-    font-size: 18px;
-    color:gray;
-    font-weight: 300;
+    font-size: 14px;
+    color: #7c8796
 }
 
 .container .bottom ul li a:hover{
     text-decoration:underline;
 }
-
+.bottom{
+    margin-top: 12px;
+}

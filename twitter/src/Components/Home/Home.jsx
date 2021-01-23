@@ -16,7 +16,6 @@ class Home extends React.Component {
         return (
             <div className="container">
                 <div className="left">
-                  
                     <ul>
                         <li className='follow'>
                             Follow your interests.
@@ -34,10 +33,9 @@ class Home extends React.Component {
                         <div className='image'>
                             <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
                         </div>
-                        <h1>See what’s happening in <br/> the world right now</h1>
-                        <br/>
-                        <br/>
-                        <p>Join Twitter today.</p>
+                        <h1>See what’s happening in</h1>
+                        <h1 style={{marginBottom:"55px",marginTop:"-20px",marginLeft:"-50px"}}>the world right now</h1>
+                        <h4 style={{marginLeft:"-300px"}}>Join Twitter today.</h4>
                         <button className="btn">Sign Up</button>
                         <button className="btn1">Log in</button>
                     </div>
@@ -45,58 +43,56 @@ class Home extends React.Component {
                 <div className="bottom">
                     <ul>
                         <li>
-                            <a href='#'>About</a>
+                            <a href='https://about.twitter.com/'>About</a>
                         </li>
                         <li>
-                            <a href='#'>Help Center</a>
+                            <a href='https://help.twitter.com/'>Help Center</a>
                         </li>
                         <li>
-                            <a href='#'>
-                                Terms of Service</a>
+                            <a href='https://twitter.com/tos'>Terms of Service</a>
                         </li>
                         <li>
-                            <a href='#'> Privacy Policy</a>
+                            <a href='https://twitter.com/privacy'>Privacy Policy</a>
                         </li>
                         <li>
-                            <a href='#'>Cookie Policy</a>
+                            <a href='https://support.twitter.com/articles/20170514'>Cookie Policy</a>
                         </li>
                         <li>
-                            <a href='#'>
-                                Ads info</a>
+                            <a href='https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html'>Ads info</a>
                         </li>
                         <li>
-                            <a href='#'>  Blog</a>
+                            <a href='https://blog.twitter.com/'>Blog</a>
                         </li>
                         <li>
-                            <a href='#'> Status</a>
+                            <a href='https://status.twitterstat.us/'>Status</a>
                         </li>
                         <li>
-                            <a href='#'> Careers</a>
+                            <a href='https://careers.twitter.com/'>Careers</a>
                         </li>
                         <li>
-                            <a href='#'>Brand Resources</a>
+                            <a href='https://about.twitter.com/press/brand-assets'>Brand Resources</a>
                         </li>
                         <li>
-                            <a href='#'> Advertising</a>
+                            <a href='https://ads.twitter.com/?ref=gl-tw-tw-twitter-advertise'>Advertising</a>
                         </li>
                         <li>
-                            <a href='#'>Marketing</a>
+                            <a href='https://marketing.twitter.com/'>Marketing</a>
                         </li>
                         <li>
-                            <a href='#'>Twitter for Business</a>
+                            <a href='https://business.twitter.com/'>Twitter for Business</a>
                         </li>
                         <li>
-                            <a href='#'>Developers</a>
+                            <a href='https://developer.twitter.com/'>Developers</a>
                         </li>
                         <li>
-                            <a href='#'>Directory</a>
+                            <a href='https://twitter.com/i/directory/profiles'>Directory</a>
                         </li>
                         <li>
-                            <a href='#'>Settings</a>
+                            <a href='https://twitter.com/settings'>Settings</a>
                         </li>
                         <br/>
                         <li>
-                            <a href='#'>© 2021 Twitter, Inc</a>
+                            © 2021 Twitter, Inc.
                         </li>
 
                     </ul>
