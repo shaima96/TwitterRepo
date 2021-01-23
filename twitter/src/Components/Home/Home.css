@@ -57,10 +57,10 @@ body,html{
 }
 
 .container .right .card h1{
-   font-size: 40px;
+   font-size: 30px;
    line-height: 50px;
    color: black;
-   margin-right: 150px;
+   margin-right: 160px;
 }
 .container .right .card p{
     font-size: 18px;
