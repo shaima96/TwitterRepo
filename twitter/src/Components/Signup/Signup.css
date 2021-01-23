@@ -1,0 +1,222 @@
+.container_signup{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    background:white padding-box;
+	box-shadow: 3px 4px 15px #0000001A;
+	border-radius: 30px;
+    width: 40%;
+    height: 650px;
+    }
+
+  
+.div_button .button{
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: #1da1f2;
+    height: 40px;
+    width:100px;
+    border: #1da1f2;
+    margin-left: 580px;
+    margin-top:-100px;
+    
+}
+ 
+.div_button .button:hover{
+   color:white;
+   background-color: #2596be;
+}
+
+.div_form h2{
+    font-size:30px;
+    font-weight: bold;
+    margin-right: 330px;
+}
+.div_form h5{
+    font-size:15px;
+    margin-right: 480px;
+    color: #1da1f2;
+    font-weight: 100;
+}
+.div_form h4{
+    font-size:20px;
+    font-weight: bold;
+    margin-right: 460px;
+}
+.div_form p{
+    font-size:18px;
+    font-weight: 400;
+    width: 600px;
+    margin-left: 70px;
+    color: gray;
+    text-align: left;
+}
+
+.signup .Input{
+    width: 600px;
+    color: black;
+
+    
+}
+.signup .Input:hover{
+  
+    color: black;
+    font-weight: bold;
+    border: #1da1f2;
+}
+
+.div_form{
+    margin-top:10px;
+}
+
+
+/*Date css*/
+.container_date #day_form{
+    width: 300px;
+}
+
+/*Forget password*/
+
+.ontainer_forget{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+.detail{
+    background:white padding-box;
+	box-shadow: 3px 4px 15px #0000001A;
+	border-radius: 5px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+.detail img{
+    margin-left: 600px;
+    margin-top: 10px;
+}
+.detail h4{
+    margin-right: 100px;
+    color: gray;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top:20px;
+}
+
+.details h1{
+    font-size: 40px;
+    margin-right: 120px;
+}
+
+.details h3{
+    font-size: 15px;
+    margin-right: 300px;
+    color:black;
+    font-weight: 300;
+}
+
+.details .search_input{
+    font-size: 15px;
+    margin-right: 140px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: black;
+    width: 25%;
+    height: 50px;
+    border:#1da1f2;
+}
+.details .search_input:hover{
+   background-color: white;
+   border: #1da1f2;
+}
+
+.details .search{
+    font-size: 16px;
+    margin-right: 480px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: #1da1f2;
+    width: 6%;
+    height: 40px;
+    text-transform: lowercase;
+}
+
+.details .search:hover{
+   background-color: #2596be;
+}
+
+/*Form 2*/
+.container_form2{
+ display: inline-block;
+align-items: center;
+justify-content: center;
+background:white padding-box;
+box-shadow: 3px 4px 15px #0000001A;
+border-radius: 50px;
+width: 40%;
+height: 650px;
+margin-top: 90px;
+}
+
+.form2_button{
+    display: flex;
+    /* background-color: aquamarine; */
+}
+.form2_button Button{
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: #1da1f2;
+    height: 40px;
+    width:100px;
+    border: #1da1f2;
+    margin-left: 480px;
+    margin-bottom:-30px;
+    }
+.div_form2 .button:hover{
+   color:white;
+   background-color: #2596be;
+}
+.div_form2 h2{
+    font-size: 30px;
+    margin-right: 250px;
+    font-weight: bold;
+}
+.div_form2 h3{
+    font-size: 20px;
+    margin-right: 140px;
+    font-weight: bold;
+}
+.div_form2 p{
+    font-size:18px;
+    font-weight: 400;
+    width: 600px;
+    margin-left: 53px;
+    color:black;
+    text-align: left;
+}
+.div_form2 h4{
+    font-size:18px;
+    font-weight: 400;
+    width: 600px;
+    margin-left: 5px;
+    color:gray;
+    text-align: left;
+}
+.div_form2 h4 a{
+    color: #1da1f2;
+    font-size: 20px;
+    text-decoration: none;
+ 
+}
+.div_form2 h4 a:hover{
+    color: #1da1f2;
+    text-decoration: underline;
+
+}
