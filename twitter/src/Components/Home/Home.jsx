@@ -22,7 +22,7 @@ class Home extends React.Component {
                             Follow your interests.
                         </li>
                         <li className='fas fa-users-friends icon'>
-                            Hear what people are talking about.
+                        Hear what people are talking about.
                         </li>
                         <li className='join'>
                             Join the conversation.
@@ -34,8 +34,9 @@ class Home extends React.Component {
                         <div className='image'>
                             <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="70px" height="70px" />
                         </div>
-                        <h1>See what’s happening in the world right now</h1>
-                        <p>Join Twitter today.</p>
+                        <h1>See what’s happening in</h1>
+                        <h1 style={{marginLeft:"-50px"}}>the world right now</h1>
+                        <h4 style={{marginLeft:"-260px"}}>Join Twitter today.</h4>
                         <button className="btn">Sign Up</button>
                         <button className="btn1">Log in</button>
                     </div>

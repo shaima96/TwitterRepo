@@ -15,6 +15,7 @@ body,html{
 
 .container .left{
   background-color: #1da1f2; 
+  background-image: url("https://i.imgur.com/2QEzt8c.png");
   grid-column: 1 / 2;
   display: flex;
   justify-content: center;
@@ -24,21 +25,21 @@ body,html{
 }
 
 .container .left ul .follow{
-    margin-right: 140px;
+    margin-top: 52px;
+    margin-right: 130px;
 }
 .container .left ul .join{
-    margin-right: 140px;
+    margin-right: 120px;
 
 }
 .container .left ul li {
     list-style-type: none;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 24px;
     font-weight: bold;
-    margin: 30px 0px;
+    margin: 43px 0px;
     color: white;
 }
-
 .container .right{
     grid-column: 2 / -1;
     display: flex;
@@ -79,7 +80,7 @@ button.btn{
     font-weight: bold;
     color: white;
     background-color: #1da1f2;
-    width: 60%;
+    width: 28vw;
     height: 50px;
     border: none;
     outline: none;
@@ -97,7 +98,7 @@ button.btn1{
     font-weight: bold;
     color:#1da1f2;
     background-color: white;
-    width: 60%;
+    width: 28vw;
     height: 50px;
     border: none;
     outline: none;
@@ -112,12 +113,11 @@ button.btn1:hover{
 }
 .container .bottom{
     grid-column: 1 / -1;
-    border-top:1px solid  #aab8ca ;
 }
 
 .container .bottom ul{
     text-align: center;
-    color: #aab8ca
+    color: #7c8796
 }
 .container .bottom ul li{
     display: inline-block;
@@ -126,7 +126,7 @@ margin: 0 5px;
 .container .bottom ul li a{
     text-decoration: none;
     font-size: 15px;
-    color: #aab8ca
+    color: #7c8796
 }
 
 .container .bottom ul li a:hover{
