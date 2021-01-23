@@ -53,11 +53,12 @@ body,html{
  display: flex;
  justify-content: space-between;
  margin-left: -20px;
+ /* margin-bottom: 100px; */
 }
 
 .container .right .card h1{
-   font-size: 27px;
-   line-height: 32px;
+   font-size: 40px;
+   line-height: 50px;
    color: black;
    margin-right: 150px;
 }
@@ -71,7 +72,7 @@ body,html{
    
 button.btn{
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
@@ -81,7 +82,7 @@ button.btn{
     height: 50px;
     border: none;
     outline: none;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
 }
 button.btn:hover{
     background-color:#2596be;
@@ -89,7 +90,7 @@ button.btn:hover{
 }
 button.btn1{
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;

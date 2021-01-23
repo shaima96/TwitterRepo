@@ -31,7 +31,7 @@ class Home extends React.Component {
                 <div className="right">
                     <div className='card'>
                         <div className='image'>
-                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="70px" height="70px" />
+                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
                         </div>
                         <h1>See what’s happening in</h1>
                         <h1 style={{marginBottom:"55px",marginTop:"-20px",marginLeft:"-50px"}}>the world right now</h1>
@@ -90,6 +90,7 @@ class Home extends React.Component {
                         <li>
                             <a href='https://twitter.com/settings'>Settings</a>
                         </li>
+                        <br/>
                         <li>
                             © 2021 Twitter, Inc.
                         </li>
