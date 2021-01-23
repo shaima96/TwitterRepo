@@ -4,6 +4,8 @@
 body,html{
     margin: 0;
     padding: 0;
+    background-image: url("https://i.imgur.com/kEi7iVt.png");
+    background-repeat: no-repeat; 
 }
 
 .container{
@@ -14,14 +16,10 @@ body,html{
 }
 
 .container .left{
-  background-color: #1da1f2; 
-  background-image: url("https://i.imgur.com/2QEzt8c.png");
   grid-column: 1 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-repeat: no-repeat; 
-    
 }
 
 .container .left ul .follow{
@@ -45,11 +43,10 @@ body,html{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .container .right .card{
-   margin-left: 200px;
+   margin-left: 80px;
 }
 
 .container .right .card .image{
@@ -62,15 +59,15 @@ body,html{
    font-size: 27px;
    line-height: 32px;
    color: black;
-   margin-right: 100px;
-   }
-   .container .right .card p{
+   margin-right: 150px;
+}
+.container .right .card p{
     font-size: 18px;
     line-height: 32px;
     color: black;
     font-weight: bold;
     margin-right: 500px;
-    }
+}
    
 button.btn{
     display: block;
@@ -121,7 +118,7 @@ button.btn1:hover{
 }
 .container .bottom ul li{
     display: inline-block;
-margin: 0 5px;
+    margin: 0 5px;
 }
 .container .bottom ul li a{
     text-decoration: none;
@@ -132,4 +129,6 @@ margin: 0 5px;
 .container .bottom ul li a:hover{
     text-decoration:underline;
 }
-
+.bottom{
+    margin-top: 12px;
+}
