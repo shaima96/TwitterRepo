@@ -32,9 +32,11 @@ class Home extends React.Component {
                 <div className="right">
                     <div className='card'>
                         <div className='image'>
-                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="70px" height="70px" />
+                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
                         </div>
-                        <h1>See what’s happening in the world right now</h1>
+                        <h1>See what’s happening in <br/> the world right now</h1>
+                        <br/>
+                        <br/>
                         <p>Join Twitter today.</p>
                         <button className="btn">Sign Up</button>
                         <button className="btn1">Log in</button>
@@ -92,6 +94,7 @@ class Home extends React.Component {
                         <li>
                             <a href='#'>Settings</a>
                         </li>
+                        <br/>
                         <li>
                             <a href='#'>© 2021 Twitter, Inc</a>
                         </li>
