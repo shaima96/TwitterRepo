@@ -32,7 +32,7 @@
     height: 32px;
     width:90px;
     border: #1da1f2;
-    margin-left: 500px;
+    margin-left: 550px;
     margin-top:-90px;
     
 }
@@ -324,7 +324,8 @@
 
 .div_form3 p{
     margin-left: 50px;
-    font-size: 15.5px;
+    font-size: 14px;
+ text-align: left;
 }
 .div_form3 p a{
     text-decoration: none;
@@ -332,4 +333,79 @@
 }
 .div_form3 p a:hover{
     text-decoration: underline;
+}
+
+/*Form 4*/
+
+.container_form4{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background:white padding-box;
+	box-shadow: 3px 4px 15px #0000001A;
+	border-radius: 30px;
+    width: 50%;
+    height: 550px;
+    margin-left: 300px;
+}
+.form4_button{
+    display: flex;
+}
+.form4_button #back{
+    display: block;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.form4_button #twitter{
+    display: block;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+.div_form4 h2{
+    margin-left: 50px;
+}
+.div_form4 h3{
+    margin-left: 50px;
+    font-size: 14px;
+    color: black;
+    font-weight: 200;
+}
+
+.div_form4 h4{
+    color: #1da1f2;
+    margin-left: 50px;
+    font-weight: 100;
+
+}
+
+.div_form4 h4:hover{
+   text-decoration: underline;
+
+}
+
+.div_form4 .Input{
+    width: 550px;
+    color: black;
+    margin-left: 50px;
+
+    
+}
+.form4_button .button{
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color:#1da1f2;
+    height: 30px;
+    width:90px;
+    border: #1da1f2;
+    display: block;
+    margin-left: 250px;
+    margin-top:22px;
+    }
+.form4_button .button:hover{
+    color:white;
+    background-color: #2596be;
 }

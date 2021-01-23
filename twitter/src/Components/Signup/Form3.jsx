@@ -1,6 +1,7 @@
 import React from 'react';
 import './Signup.css'
 import { Button, TextField } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 
 class FormThree extends React.Component {
@@ -63,9 +64,10 @@ class FormThree extends React.Component {
                         />
                         <br/>
                         <br/>
-                        <p>By signing up, you agree to the <a href='https://twitter.com/en/tos#new'  target='_blank'>Terms of Service</a> and <a href='https://twitter.com/en/privacy'  target='_blank'>Privacy Policy</a>, including<a href='https://help.twitter.com/en/rules-and-policies/twitter-cookies' target='_blank'>Cookie Use.</a> Others will be able to find you by email or phone number when provided · Privacy Options</p>
-                        <Button type='submit' className='button' > Sign up </Button>
-
+                        <p>By signing up, you agree to the <a href='https://twitter.com/en/tos#new'  target='_blank'>Terms of Service</a> and <a href='https://twitter.com/en/privacy'  target='_blank'>Privacy Policy</a>, including<a href='https://help.twitter.com/en/rules-and-policies/twitter-cookies' target='_blank'>Cookie Use.</a><br/> Others will be able to find you by email or phone number when provided · Privacy Options</p>
+                        <Link  to='/form4' style={{ textDecoration: 'none' }}>
+                    <Button type='submit' className='button' > Sign up </Button>
+                    </Link>
                     </form>
                 </div>
             </div>
