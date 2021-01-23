@@ -34,7 +34,9 @@ class Home extends React.Component {
                             <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
                         </div>
                         <h1>See what’s happening in <br/>the world right now</h1>
-                        <h4 style={{marginLeft:"-300px"}}>Join Twitter today.</h4>
+                        <h4>Join Twitter today.</h4>
+                        <br/>
+                        <br/>
                         <button className="btn">Sign Up</button>
                         <button className="btn1">Log in</button>
                     </div>
