@@ -1,9 +1,8 @@
 .feed {
-    flex: 0.4;
+    flex: 0.5;
     border-right: 1px solid var(--twitter-background);
     /* min-width: fit-content; */
     overflow-y: scroll;
-    
   }
   /* to hide the sidebar  for chorme and safari*/
   .feed::-webkit-scrollbar {
