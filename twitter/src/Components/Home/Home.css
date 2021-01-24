@@ -4,86 +4,90 @@
 body,html{
     margin: 0;
     padding: 0;
+ 
 }
 
 .container{
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 85vh 15vh ;
+     background-image: url("https://i.imgur.com/kEi7iVt.png");
+     background-repeat: no-repeat;
+    
+
 }
 
 .container .left{
-  background-color: #1da1f2; 
   grid-column: 1 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-repeat: no-repeat; 
-    
 }
 
 .container .left ul .follow{
-    margin-right: 140px;
+    margin-top: 52px;
+    margin-right: 130px;
 }
 .container .left ul .join{
-    margin-right: 140px;
+    margin-right: 120px;
 
 }
 .container .left ul li {
     list-style-type: none;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 24px;
     font-weight: bold;
-    margin: 30px 0px;
+    margin: 43px 0px;
     color: white;
 }
-
 .container .right{
     grid-column: 2 / -1;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .container .right .card{
-   margin-left: 200px;
+   margin-left: 80px;
 }
 
 .container .right .card .image{
  display: flex;
  justify-content: space-between;
  margin-left: -20px;
+ /* margin-bottom: 100px; */
 }
 
 .container .right .card h1{
-   font-size: 27px;
-   line-height: 32px;
+   font-size: 30px;
+   line-height: 50px;
    color: black;
-   margin-right: 100px;
-   }
-   .container .right .card p{
+   margin-right: 150px;
+}
+.container .right .card h4{
+    margin-left: 8px;
+ }
+.container .right .card p{
     font-size: 18px;
     line-height: 32px;
     color: black;
     font-weight: bold;
     margin-right: 500px;
-    }
+}
    
 button.btn{
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
     color: white;
     background-color: #1da1f2;
-    width: 60%;
+    width: 28vw;
     height: 50px;
     border: none;
     outline: none;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
 }
 button.btn:hover{
     background-color:#2596be;
@@ -91,13 +95,13 @@ button.btn:hover{
 }
 button.btn1{
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
     border-radius: 100px;
     font-weight: bold;
     color:#1da1f2;
     background-color: white;
-    width: 60%;
+    width: 28vw;
     height: 50px;
     border: none;
     outline: none;
@@ -112,24 +116,25 @@ button.btn1:hover{
 }
 .container .bottom{
     grid-column: 1 / -1;
-    border-top:1px solid  #aab8ca ;
 }
 
 .container .bottom ul{
     text-align: center;
-    color: #aab8ca
+    color: #7c8796
 }
 .container .bottom ul li{
     display: inline-block;
-margin: 0 5px;
+    margin: 0 5px;
 }
 .container .bottom ul li a{
     text-decoration: none;
-    font-size: 15px;
-    color: #aab8ca
+    font-size: 14px;
+    color: #7c8796
 }
 
 .container .bottom ul li a:hover{
     text-decoration:underline;
 }
-
+.bottom{
+    margin-top: 30px;
+}
