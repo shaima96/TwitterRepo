@@ -8,6 +8,8 @@ import Forget from '../src/Components/Signup/ForgetPage'
 import FormTwo from './Components/Signup/form2'
 import FormThree from '../src/Components/Signup/Form3'
 import FormFour from '../src/Components/Signup/Form4'
+import FormFive from '../src/Components/Signup/Form5'
+
 
 
 
@@ -24,6 +26,7 @@ function App() {
           <Route exact path='/form2'  component={FormTwo} />
           <Route exact path='/form3'  component={FormThree} />
           <Route exact path='/form4'  component={FormFour} />
+          <Route exact path='/form5'  component={FormFive} />
         </Switch>
     </div>
   );

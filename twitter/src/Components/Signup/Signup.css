@@ -409,3 +409,75 @@
     color:white;
     background-color: #2596be;
 }
+
+
+/*Form 5*/
+
+.container_form5{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background:white padding-box;
+	box-shadow: 3px 4px 15px #0000001A;
+	border-radius: 30px;
+    width: 50%;
+    height: 550px;
+    margin-left: 300px;
+}
+.form5_button{
+    display: flex;
+}
+
+.form5_button #twitter{
+    display: block;
+    margin-left: 260px;
+    margin-top: 10px;
+}
+.div_form5 h2{
+    margin-left: 50px;
+}
+.div_form5 h3{
+    margin-left: 50px;
+    font-size: 14px;
+    color: black;
+    font-weight: 200;
+}
+
+.div_form5 h4{
+    color: #1da1f2;
+    margin-left: 50px;
+    font-weight: 100;
+
+}
+
+.div_form5 h4:hover{
+   text-decoration: underline;
+
+}
+
+.div_form5 .Input{
+    width: 550px;
+    color: black;
+    margin-left: 50px;
+
+    
+}
+.form5_button .button{
+    font-size: 16px;
+    line-height: 20px;
+    border-radius: 100px;
+    font-weight: bold;
+    color: white;
+    background-color:#1da1f2;
+    height: 30px;
+    width:90px;
+    border: #1da1f2;
+    display: block;
+    margin-left: 250px;
+    margin-top:22px;
+    }
+.form5_button .button:hover{
+    color:white;
+    background-color: #2596be;
+}
