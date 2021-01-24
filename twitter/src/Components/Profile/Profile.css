@@ -1,6 +1,6 @@
 .profile {
     flex: 0.5;
-    border-right: 1px solid var(--twitter-background);
+    border-right: 1px solid #e6ecf0;;
     width: 2000px;
     /* width: 70%; */
     overflow-y:visible;
@@ -30,7 +30,7 @@
     top: 0;
     background-color: white;
     z-index: 100;
-    border: 1px solid var(--twitter-background);
+    border: 1px solid #e6ecf0;;
     padding: 15px 20px;
   }
 
@@ -69,8 +69,8 @@ color : rgb(181,190,199)
 
   .profile__followButton {
     background-color: white !important;
-    border:  solid var(--twitter-color) !important;
-    color: var(--twitter-color) !important;
+    border:  solid  #50b7f5 !important;
+    color:  #50b7f5 !important;
     font-weight: 1000 !important;
     text-transform: inherit !important;
     border-radius: 30px !important;
@@ -134,7 +134,7 @@ color : rgb(181,190,199)
   
   .profile__post__badge {
     font-size: 14px !important;
-    color: var(--twitter-color);
+    color:  #50b7f5;
   }
   
   .profile__post__headerSpecial {
