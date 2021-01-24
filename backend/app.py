@@ -1,4 +1,6 @@
-from flask import Flask, request, jsonify
+from flask_jwt import JWT, jwt_required, current_identity
+#from Settings.security import authenticate, identity
+from flask import Flask, request, jsonify, Response
 from bson import json_util, ObjectId
 from flask_cors import CORS
 import json
@@ -11,10 +13,14 @@ app = Flask(__name__)
 # enables CORS
 cors = CORS(app)
 
+# JWT 
+app.secret_key = 'qwertyasdf'
+#jwt = JWT(app, authenticate, identity)
+
 # get views from database
 @app.route('/', methods=['GET','POST','PUT','DEL'])
 def Hello():
-    return Hello
+    return "Hello"
 
 # locate the directory of the app file
 basedir = os.path.abspath(os.path.dirname(__file__))
