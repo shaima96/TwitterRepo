@@ -1,7 +1,7 @@
 # Twitter Replica
 This repo is a replica version of the famous web app twitter
 
-[![pic](https://www.magisto.com/blog/wp-content/uploads/2019/03/Twitter.jpg)](https://www.magisto.com/blog/wp-content/uploads/2019/03/Twitter.jpg)
+![Screenshot (1)](https://user-images.githubusercontent.com/37650536/105643467-aa4ac980-5e98-11eb-8a23-21841369db77.png)
 
 ## Technologies used
 - Javascript 
