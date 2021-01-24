@@ -4,10 +4,15 @@
 [![pic](https://www.magisto.com/blog/wp-content/uploads/2019/03/Twitter.jpg)](https://www.magisto.com/blog/wp-content/uploads/2019/03/Twitter.jpg)
 
 ## Technologies used
-- Frontend: Javascript : React 
-- Server : Python : Flask
-- Database : AtlasDB : Pymongo
-- Deployment : Firebase
+- Javascript 
+- React 
+- Python 
+- Flask
+- AtlasDB 
+- Pymongo
+- Firebase
 
-## New code lines used 
--```nothing yet```
+## Teams
+-[Hamdallah](https://github.com/Hamdalla2)
+-[Hiba](https://github.com/hibtmimi)
+-[Shaima](https://github.com/shaima96)
