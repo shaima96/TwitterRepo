@@ -1,7 +1,7 @@
 # Twitter Replica
 This repo is a replica version of the famous web app twitter
 
-![Screenshot (1)](https://user-images.githubusercontent.com/37650536/105643467-aa4ac980-5e98-11eb-8a23-21841369db77.png)
+![Capture](https://user-images.githubusercontent.com/37650536/105643505-f0079200-5e98-11eb-85f4-0973ebee10be.PNG)
 
 ## Technologies used
 - Javascript 
