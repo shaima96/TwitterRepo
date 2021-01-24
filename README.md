@@ -12,6 +12,38 @@
 - Pymongo
 - Firebase
 
+
+
+## How to run it :
+1. Backend
+   - Go from root directory to Backend directory
+    ```
+    cd Backend/
+    ```
+   - Create virtualenv
+   ```
+   python -m venv env
+   .\env\Scripts\activate
+   pip install -r requirements.txt
+   ```
+   - Run the server:
+    ```
+    cd Backend/
+    python manage.py runserver
+    ```
+2. frontend
+   - Go from root directory to client directory
+   ```
+   cd twitter/
+   npm i
+   ```
+   - Run the app
+   ```
+   npm start
+   ```
+
+
+
 ## Teams
 - [Hamdallah](https://github.com/Hamdalla2)
 - [Hiba](https://github.com/hibtmimi)
