@@ -195,7 +195,7 @@
 }
 .form2_button #twitter{
     display: block;
-    margin-left: 150px;
+    margin-left: 170px;
     margin-top: 10px;
 }
 .form2_button .button{
@@ -209,7 +209,7 @@
     width:90px;
     border: #1da1f2;
     display: block;
-    margin-left: 250px;
+    margin-left: 280px;
     margin-top:22px;
     }
 .form2_button.button:hover{
