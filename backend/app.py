@@ -48,7 +48,15 @@ def signup():
             return redirect(url_for('index'))
         return 'Username taken!'
     return render_template('signup.html')
-                
+
+@app.route('/email', methods=['POST'])
+def email():
+        users = db.db.users
+        existing_user = users.find_one({'email' : request.form['email']})
+        if existing_user is None:
+            return "ok"
+        return 'email already registered!'
+
 # run the flask app
 if __name__ == '__main__':
     app.secret_key = 'qwertyasdf'
