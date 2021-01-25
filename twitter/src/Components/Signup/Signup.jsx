@@ -36,7 +36,6 @@ class Signup extends React.Component {
                 </div>
                 <div className='div_form'>
                     <h2>Create your account</h2>
-                    <br/>
                     <form className='signup' >
                         <TextField className='Input'
                             label='name'
@@ -58,14 +57,9 @@ class Signup extends React.Component {
                             variant="outlined"
                             required
                         />
-                        <br/>
-                        <br/>
                         <h5>Use phone instead</h5>
-                        <br/>
-                        <br/>
                         <h4>Date of Birth</h4>
                         <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
-                        <br/>
                         <Date onChange={this.handleChange} value={dateOfBirth} />
                     </form>
                 </div>
