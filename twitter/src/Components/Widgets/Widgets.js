@@ -27,6 +27,23 @@ function Widgets() {
     options={{ text: '#reactjs is awesome', via: 'hibatamimi' }}
   />
       </div>
+      
+      <div className="widgets__widgetContainer">
+      
+        <TwitterTweetEmbed
+  tweetId={'933354946111705097'}
+/>
+
+        <TwitterTimelineEmbed
+  sourceType="profile"
+  screenName="saurabhnemade"
+  options={{height: 400}}
+/>
+<TwitterShareButton
+    url={'https://facebook.com/saurabhnemade'}
+    options={{ text: '#reactjs is awesome', via: 'hibatamimi' }}
+  />
+      </div>
     </div>
   );
 }
