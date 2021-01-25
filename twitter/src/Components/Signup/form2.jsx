@@ -14,6 +14,7 @@ class FormTwo extends React.Component {
 
     render() {
         return (
+            <div className='container_image'>
             <div className='container_form2'>
                 <div className='form2_button'>
                     <a href="javascript:history.go(-1)">
@@ -36,6 +37,7 @@ class FormTwo extends React.Component {
                         <h4>For more details about these settings, visit the <a href='https://help.twitter.com/en/managing-your-account/new-account-settings' target='_blank'>Help Center.</a></h4>
                     </p>
                 </div>
+            </div>
             </div>
 
         )
