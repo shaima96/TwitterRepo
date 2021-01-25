@@ -1,5 +1,10 @@
 import React from 'react';
 import './Home.css'
+import { Link } from 'react-router-dom'
+// import RegisterDialog from '../Signup/RegisterDialog'
+
+
+
 
 
 
@@ -31,13 +36,18 @@ class Home extends React.Component {
                 <div className="right">
                     <div className='card'>
                         <div className='image'>
-                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="70px" height="70px" />
+                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="80px" height="80px" />
                         </div>
-                        <h1>See what’s happening in</h1>
-                        <h1 style={{marginBottom:"55px",marginTop:"-20px",marginLeft:"-50px"}}>the world right now</h1>
-                        <h4 style={{marginLeft:"-300px"}}>Join Twitter today.</h4>
+                        <h1>See what’s happening in <br/>the world right now</h1>
+                        <br/>
+                        <h4>Join Twitter today.</h4>
+                        <br/>
+                        <Link  to='/signup' style={{ textDecoration: 'none' }}>
                         <button className="btn">Sign Up</button>
+                        </Link>
+                        <Link  to='/login' style={{ textDecoration: 'none' }}>
                         <button className="btn1">Log in</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="bottom">
@@ -90,6 +100,7 @@ class Home extends React.Component {
                         <li>
                             <a href='https://twitter.com/settings'>Settings</a>
                         </li>
+                        <br/>
                         <li>
                             © 2021 Twitter, Inc.
                         </li>
