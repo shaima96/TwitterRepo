@@ -19,6 +19,7 @@ class FormThree extends React.Component {
         const { name, email, dateOfBirth } = this.state
 
         return (
+            <div className='container_image'>
             <div className='container_form3'>
                 <div className='form3_button'>
                     <a href="javascript:history.go(-1)">
@@ -70,6 +71,7 @@ class FormThree extends React.Component {
                     </Link>
                     </form>
                 </div>
+            </div>
             </div>
 
         )
