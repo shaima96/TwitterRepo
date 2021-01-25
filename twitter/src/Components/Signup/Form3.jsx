@@ -22,7 +22,7 @@ class FormThree extends React.Component {
             <div className='container_form3'>
                 <div className='form3_button'>
                     <a href="javascript:history.go(-1)">
-                        <img id='back' src='https://www.flaticon.com/svg/vstatic/svg/786/786399.svg?token=exp=1611349384~hmac=aeb9533bff962d5f72fc04add3e38f6a' width='40px' height='40px' />
+                        <img id='back' src='https://i.imgur.com/5ZC472g.png' width='40px' height='40px' />
                     </a>
                     <h4>Step 3 of 5</h4>
                 </div>
@@ -66,8 +66,8 @@ class FormThree extends React.Component {
                         <br/>
                         <p>By signing up, you agree to the <a href='https://twitter.com/en/tos#new'  target='_blank'>Terms of Service</a> and <a href='https://twitter.com/en/privacy'  target='_blank'>Privacy Policy</a>, including<a href='https://help.twitter.com/en/rules-and-policies/twitter-cookies' target='_blank'>Cookie Use.</a><br/> Others will be able to find you by email or phone number when provided · Privacy Options</p>
                         <Link  to='/form4' style={{ textDecoration: 'none' }}>
-                    <Button type='submit' className='button' > Sign up </Button>
-                    </Link>
+                            <Button type='submit' className='button' > Sign up </Button>
+                        </Link>
                     </form>
                 </div>
             </div>

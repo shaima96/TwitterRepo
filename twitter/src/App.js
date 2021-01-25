@@ -1,15 +1,15 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import Home  from '../src/Components/Home/Home'
+import Home  from './Components/Home/Home';
 import Profilepage from './Components/Profile/Profilepage';
-import Homepage from './Components/Homepage';
-import Signup from '../src/Components/Signup/Signup'
-import Login from '../src/Components/Login/Login'
-import Forget from '../src/Components/Signup/ForgetPage'
-import FormTwo from './Components/Signup/form2'
-import FormThree from '../src/Components/Signup/Form3'
-import FormFour from '../src/Components/Signup/Form4'
-import FormFive from '../src/Components/Signup/Form5'
+import Homepage from './Components/HomePage/Homepage';
+import Signup from './Components/Signup/Signup';
+import Login from './Components/Login/Login';
+import Forget from './Components/Signup/ForgetPage';
+import FormTwo from './Components/Signup/form2';
+import FormThree from './Components/Signup/Form3';
+import FormFour from './Components/Signup/Form4';
+import FormFive from './Components/Signup/Form5';
 
 
 

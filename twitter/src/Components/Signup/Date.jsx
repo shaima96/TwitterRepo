@@ -34,16 +34,16 @@ export default function Date() {
 
   return (
     <div className='container_date'>
-      <FormControl variant="outlined"  id='day_form'className={classes.formControl}>
-        <InputLabel htmlFor="outlined-day-native-simple">Day</InputLabel>
+      <FormControl variant="outlined"  id='day_form' className={classes.formControl}>
+        <InputLabel htmlFor="outlined-month-native-simple">Month</InputLabel>
         <Select
           native
-          value={state.day}
+          value={state.month}
           onChange={handleChange}
-          label="day"
+          label="month"
           inputProps={{
-            name: 'day',
-            id: 'outlined-day-native-simple',
+            name: 'month',
+            id: 'outlined-month-native-simple',
           }}
         >
           <option aria-label="None" value="" />
@@ -63,15 +63,15 @@ export default function Date() {
       </FormControl>
       
       <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel htmlFor="outlined-month-native-simple">Month</InputLabel>
+        <InputLabel htmlFor="outlined-day-native-simple">Day</InputLabel>
         <Select
           native
           value={state.day}
           onChange={handleChange}
-          label="month"
+          label="day"
           inputProps={{
-            name: 'month',
-            id: 'outlined-month-native-simple',
+            name: 'day',
+            id: 'outlined-day-native-simple',
           }}
         >
           <option aria-label="None" value="" />
@@ -123,58 +123,85 @@ export default function Date() {
           }}
         >
           <option aria-label="None" value="" />
-          <option value={1}>1970</option>
-          <option value={2}>1971</option>
-          <option value={3}>1972</option>
-          <option value={4}>1973</option>
-          <option value={5}>1974</option>
-          <option value={6}>1975</option>
-          <option value={7}>1976</option>
-          <option value={8}>1977</option>
-          <option value={9}>1978</option>
-          <option value={10}>1979</option>
-          <option value={11}>1980</option>
-          <option value={12}>1981</option>
-          <option value={13}>1982</option>
-          <option value={14}>1983</option>
-          <option value={15}>1984</option>
-          <option value={16}>1985</option>
-          <option value={17}>1986</option>
-          <option value={18}>1987</option>
-          <option value={19}>1988</option>
-          <option value={20}>1989</option>
-          <option value={21}>1990</option>
-          <option value={22}>1991</option>
-          <option value={23}>1992</option>
-          <option value={24}>1993</option>
-          <option value={25}>1994</option>
-          <option value={26}>1995</option>
-          <option value={27}>1996</option>
-          <option value={28}>1997</option>
-          <option value={29}>1998</option>
-          <option value={30}>1999</option>
-          <option value={31}>2000</option>
-          <option value={32}>2001</option>
-          <option value={33}>2002</option>
-          <option value={34}>2003</option>
-          <option value={35}>2004</option>
-          <option value={36}>2005</option>
-          <option value={37}>2006</option>
-          <option value={38}>2007</option>
-          <option value={39}>2008</option>
-          <option value={40}>2009</option>
-          <option value={41}>2010</option>
-          <option value={42}>2011</option>
-          <option value={43}>2012</option>
-          <option value={44}>2013</option>
-          <option value={45}>2014</option>
-          <option value={46}>2015</option>
-          <option value={47}>2016</option>
-          <option value={48}>2017</option>
-          <option value={49}>2018</option>
-          <option value={50}>2019</option>
-          <option value={51}>2020</option>
-          <option value={52}>2021</option>
+          <option value={1}>2021</option>
+          <option value={2}>2020</option>
+          <option value={3}>2019</option>
+          <option value={4}>2018</option>
+          <option value={5}>2017</option>
+          <option value={6}>2016</option>
+          <option value={7}>2015</option>
+          <option value={8}>2014</option>
+          <option value={9}>2013</option>
+          <option value={10}>2012</option>
+          <option value={11}>2011</option>
+          <option value={12}>2010</option>
+          <option value={13}>2009</option>
+          <option value={14}>2008</option>
+          <option value={15}>2007</option>
+          <option value={16}>2006</option>
+          <option value={17}>2005</option>
+          <option value={18}>2004</option>
+          <option value={19}>2003</option>
+          <option value={20}>2002</option>
+          <option value={21}>2001</option>
+          <option value={22}>2000</option>
+          <option value={23}>1999</option>
+          <option value={24}>1998</option>
+          <option value={25}>1997</option>
+          <option value={26}>1996</option>
+          <option value={27}>1995</option>
+          <option value={28}>1994</option>
+          <option value={29}>1993</option>
+          <option value={30}>1992</option>
+          <option value={31}>1991</option>
+          <option value={32}>1990</option>
+          <option value={33}>1989</option>
+          <option value={34}>1988</option>
+          <option value={35}>1987</option>
+          <option value={36}>1986</option>
+          <option value={37}>1985</option>
+          <option value={38}>1984</option>
+          <option value={39}>1983</option>
+          <option value={40}>1982</option>
+          <option value={41}>1981</option>
+          <option value={42}>1980</option>
+          <option value={43}>1979</option>
+          <option value={44}>1978</option>
+          <option value={45}>1977</option>
+          <option value={46}>1976</option>
+          <option value={47}>1975</option>
+          <option value={48}>1974</option>
+          <option value={49}>1973</option>
+          <option value={50}>1972</option>
+          <option value={51}>1971</option>
+          <option value={52}>1970</option>
+          <option value={53}>1969</option>
+          <option value={54}>1968</option>
+          <option value={55}>1967</option>
+          <option value={56}>1966</option>
+          <option value={57}>1965</option>
+          <option value={58}>1964</option>
+          <option value={59}>1963</option>
+          <option value={60}>1962</option>
+          <option value={61}>1961</option>
+          <option value={62}>1960</option>
+          <option value={63}>1959</option>
+          <option value={66}>1958</option>
+          <option value={65}>1957</option>
+          <option value={66}>1956</option>
+          <option value={67}>1955</option>
+          <option value={68}>1954</option>
+          <option value={69}>1953</option>
+          <option value={70}>1952</option>
+          <option value={71}>1951</option>
+          <option value={72}>1950</option>
+          <option value={73}>1949</option>
+          <option value={74}>1948</option>
+          <option value={77}>1947</option>
+          <option value={76}>1946</option>
+          <option value={77}>1945</option>
+          <option value={78}>1944</option>
+          <option value={79}>1943</option>
 
         </Select>
       </FormControl>
