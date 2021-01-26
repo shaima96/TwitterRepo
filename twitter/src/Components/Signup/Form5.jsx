@@ -29,6 +29,7 @@ class FormFive extends React.Component {
 
     render() {
         return (
+            <div className='container_image'>
             <div className='container_form5'>
                 <div className='form5_button'>
                     <img  id='twitter'src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="60px" height="60px" />
@@ -49,6 +50,7 @@ class FormFive extends React.Component {
                         />
                         <h4>Reveal password</h4>
                 </div>
+            </div>
             </div>
 
         )

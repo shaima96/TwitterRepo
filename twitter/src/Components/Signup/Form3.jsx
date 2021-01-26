@@ -4,6 +4,7 @@ import { Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 class FormThree extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +16,7 @@ class FormThree extends React.Component {
 
   render() {
     const { name, email, dateOfBirth } = this.state;
+
 
     return (
       <div className="container_form3">

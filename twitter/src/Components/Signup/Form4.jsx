@@ -11,6 +11,7 @@ class FormFour extends React.Component {
     this.state = {};
   }
 
+
   render() {
     return (
       <div className="container_form4">
@@ -58,6 +59,7 @@ class FormFour extends React.Component {
       </div>
     );
   }
+
 }
 
 // Redux
