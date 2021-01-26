@@ -17,7 +17,7 @@
   .tweetBox__input > input {
     flex: 1;
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 16px;
     border: none;
   }
 .tweetBox__imageInput {
