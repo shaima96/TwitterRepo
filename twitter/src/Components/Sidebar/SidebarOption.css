@@ -12,7 +12,7 @@
   }
   
   .sidebarOption  {
-    padding: 20px;
+    padding:0.3px;
   }
 
   
@@ -22,7 +22,7 @@
   
   .sidebarOption > h2 {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 16px;
     margin-right: 20px;
   }
   
