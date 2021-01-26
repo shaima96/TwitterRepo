@@ -7,7 +7,7 @@
   .sidebarOption:hover {
     background-color: #e8f5fe;
     border-radius: 30px;
-    color: var #50b7f5;
+    color:  #50b7f5;
     transition: color 100ms ease-out;
   }
   
@@ -27,5 +27,5 @@
   }
   
   .sidebarOption--active {
-    color: var();
+    color:  #50b7f5;
   }

@@ -1,7 +1,7 @@
 .profile {
-    flex: 0.5;
+    flex: 0.4;
     border-right: 1px solid #e6ecf0;;
-    width: 2000px;
+    /* width: 2000px; */
     /* width: 70%; */
     overflow-y:visible;
     
