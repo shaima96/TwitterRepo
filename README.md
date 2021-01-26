@@ -10,4 +10,9 @@
 - Deployment : Firebase
 
 ## New code lines used 
--```nothing yet```
+- to deploy docker to heroku
+-```docker build . -t name```
+-```heroku login```
+-```heroku container:login```
+-```heroku container:push web --app=herokuname```
+-```heroku container:release web --app=herokuname```

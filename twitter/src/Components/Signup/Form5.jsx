@@ -1,7 +1,7 @@
+import { TextField,Button} from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import React from 'react';
-import './Signup.css'
-import { TextField,Button} from '@material-ui/core'
-import { Link } from 'react-router-dom'
+import './Signup.css';
 
 
 class FormFive extends React.Component {
@@ -11,6 +11,21 @@ class FormFive extends React.Component {
 
         }
     }
+
+    register = () => {
+        fetch("http://127.0.0.1:5000/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: e.target.value,
+        })
+          .then((response) => response.json())
+          .then((result) => {
+              localStorage.setItem({})
+    })
+}
 
     render() {
         return (

@@ -20,16 +20,18 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 @app.route('/')
 def index():
     if 'username' in session:
-        return 'You are logged in as ' + session['username']
+        return render_template('signout.html')
     return render_template('signin.html')
 
 @app.route('/signin', methods=['POST', 'GET'])
 def signin():
+    if 'username' in session:
+        return render_template('signout.html')
     if request.method == 'POST':
         users = db.db.users
-        signin_user = users.find_one({'name' : request.form['username']})
+        signin_user = users.find_one({'username' : request.form['username']})
         if signin_user:
-            if bcrypt.hashpw(request.form['password'].encode('utf-8'), signin_user['password'].encode('utf-8')) == signin_user['password'].encode('utf-8'):
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), signin_user['password']) == signin_user['password']:
                 session['username'] = request.form['username']
                 return redirect(url_for('index'))
         return 'Invalid username or password'
@@ -38,16 +40,22 @@ def signin():
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup():
+    if 'username' in session:
+        return render_template('signout.html')
     if request.method == 'POST':
         users = db.db.users
-        existing_user = users.find_one({'name' : request.form['username']})
+        existing_user = users.find_one({'username' : request.form['username']})
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'name' : request.form['username'], 'password' : hashpass})
-            session['username'] = request.form['username']
-            return redirect(url_for('index'))
+            users.insert({'username' : request.form['username'],'email' : request.form['email'],  'password' : hashpass})
+            return redirect(url_for('signin'))
         return 'Username taken!'
     return render_template('signup.html')
+
+@app.route('/signout', methods=['GET'])
+def signout():
+        session.clear()
+        return redirect(url_for('signin'))
 
 @app.route('/email', methods=['POST'])
 def email():
@@ -55,7 +63,7 @@ def email():
         existing_user = users.find_one({'email' : request.form['email']})
         if existing_user is None:
             return "ok"
-        return 'email already registered!'
+        return "no"
 
 # run the flask app
 if __name__ == '__main__':
