@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './TweetBox.css'
 import { Avatar, Button } from '@material-ui/core'
 
-function TweetBox() {
+class TweetBox extends Component() {
+        constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+    }
+    render (){
     return (
         <div className='tweetBox'>
             <form>
@@ -16,6 +23,7 @@ function TweetBox() {
             </form>
         </div>
     )
+}
 }
 
 export default TweetBox

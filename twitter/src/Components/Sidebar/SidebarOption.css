@@ -7,12 +7,12 @@
   .sidebarOption:hover {
     background-color: #e8f5fe;
     border-radius: 30px;
-    color: var #50b7f5;
+    color:  #50b7f5;
     transition: color 100ms ease-out;
   }
   
   .sidebarOption  {
-    padding: 20px;
+    padding:0.3px;
   }
 
   
@@ -22,10 +22,10 @@
   
   .sidebarOption > h2 {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 16px;
     margin-right: 20px;
   }
   
   .sidebarOption--active {
-    color: var();
+    color:  #50b7f5;
   }

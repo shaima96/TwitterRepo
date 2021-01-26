@@ -17,14 +17,14 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <TwitterIcon className="sidebar__twitterIcon" />
-   <NavLink to = '/homepage'> <SidebarOption active Icon={HomeIcon} text="Home"/> </NavLink>
+   <NavLink className='link' to = '/homepage'> <SidebarOption active Icon={HomeIcon} text="Home"/> </NavLink>
      
       <SidebarOption Icon={SearchIcon} text="Explore"  />
       <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
       <SidebarOption Icon={MailOutlineIcon} text="Messages" />
       <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" />
       <SidebarOption Icon={ListAltIcon} text="Lists" />
-      <NavLink to ='/profile'> <SidebarOption Icon={PermIdentityIcon} text="Profile" />  </NavLink>
+      <NavLink  className='link' to ='/profile'> <SidebarOption Icon={PermIdentityIcon} text="Profile" />  </NavLink>
      
       <SidebarOption Icon={MoreHorizIcon} text="More" />
 
