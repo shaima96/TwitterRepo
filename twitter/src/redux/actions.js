@@ -8,3 +8,10 @@ export const signup = (x) => {
     signup: x,
   };
 };
+
+export const date = (x) => {
+  return {
+    type: "date",
+    date: x,
+  };
+};

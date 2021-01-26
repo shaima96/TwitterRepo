@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css') }}">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form method=GET class="col" action="{{ url_for('signin') }}">
+                    <div>You are logged in as {{session['username']}}</div>
+                    <br>
+                    <button type="submit" class="btn">Sign Out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body{
+    background-color: cyan;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: row;
+    text-align: center;
+}
+.row{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: row;
+    text-align: center;
+}
+.col{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+.btn, input{
+    border-radius: 15px;
+    background-color: white;
+    border: 3px solid royalblue;
+    width: 33vw;
+    height: 5vh;
+    outline: none;
+    text-align: center;
+}
+input{
+    width: 32vw;
+    height: 4vh;
+}
+.btn:hover, input:hover{
+    background-color: pink;
+}
