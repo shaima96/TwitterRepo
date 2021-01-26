@@ -7,14 +7,8 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
-class Post extends Component (){
-    constructor(props) {
-        super(props)
-        this.state = {
-
-        }
-    }
-  render (){
+function Post (){
+  
     return (
       <div className="post" >
         <div className="post__avatar">
@@ -52,6 +46,5 @@ class Post extends Component (){
       </div>
     );
   }
-}
 
 export default Post;
