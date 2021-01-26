@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { Component, forwardRef } from "react";
 import "./Post.css";
 import { Avatar } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
@@ -7,7 +7,14 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
-function Post ({ displayName, username, verified, text, image, avatar }, ref){
+class Post extends Component (){
+    constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+    }
+  render (){
     return (
       <div className="post" >
         <div className="post__avatar">
@@ -45,5 +52,6 @@ function Post ({ displayName, username, verified, text, image, avatar }, ref){
       </div>
     );
   }
+}
 
 export default Post;
