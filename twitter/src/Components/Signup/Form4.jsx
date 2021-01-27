@@ -14,6 +14,7 @@ class FormFour extends React.Component {
 
   render() {
     return (
+      <div className="container_image">
       <div className="container_form4">
         <div className="form4_button">
           <a href="javascript:history.go(-1)">
@@ -56,6 +57,7 @@ class FormFour extends React.Component {
           />
           <h4>Didn't receive email?</h4>
         </div>
+      </div>
       </div>
     );
   }
