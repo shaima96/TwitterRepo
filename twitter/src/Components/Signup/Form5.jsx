@@ -12,8 +12,8 @@ class FormFive extends React.Component {
         }
     }
 
-    register = () => {
-        fetch("http://127.0.0.1:5000/signup", {
+    register = (e) => {
+        fetch("https://twittrer.herokuapp.com/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -23,7 +23,8 @@ class FormFive extends React.Component {
         })
           .then((response) => response.json())
           .then((result) => {
-              localStorage.setItem({})
+              console.log(result)
+              localStorage.setItem({result})
     })
 }
 

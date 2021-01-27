@@ -481,3 +481,7 @@
     color:white;
     background-color: #2596be;
 }
+.formControl{
+    min-width: 120px;
+    margin: 20px;
+  }

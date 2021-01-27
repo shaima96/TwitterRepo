@@ -11,16 +11,22 @@ class Signup extends React.Component {
     super(props);
     this.state = {
       error: "",
+      username:"",
+      email:"",
     };
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+    this.props.signup([
+      this.state.username,
+      this.state.email,
+    ])
   };
 
   checkemail = (e) => {
     this.validateEmail(e.target.value)
-      ? fetch("http://127.0.0.1:5000/email", {
+      ? fetch("https://twittrer.herokuapp.com/email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -44,6 +50,7 @@ class Signup extends React.Component {
   };
 
   render() {
+  
     return (
       <div className="container_image">
         <div className="container_signup">
@@ -58,10 +65,6 @@ class Signup extends React.Component {
               <Button
                 type="submit"
                 className="button"
-                onClick={this.props.signup([
-                  this.state.username,
-                  this.state.email,
-                ])}
               >
                 {" "}
                 Next
@@ -73,7 +76,7 @@ class Signup extends React.Component {
             <form className="signup">
               <TextField
                 className="Input"
-                label="username"
+                label="Username"
                 type="text"
                 name="username"
                 onChange={(e) => {
@@ -116,7 +119,7 @@ class Signup extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    signup: state.signup,
+    signup2: state.signup2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
