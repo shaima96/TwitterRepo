@@ -4,23 +4,26 @@ import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 class FormTwo extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  
   render() {
     return (
+      <div className="container_image">
+
       <div className="container_form2">
         <div className="form2_button">
-          <a href="javascript:history.go(-1)">
+        <Link to="/signup" style={{ textDecoration: "none" }}>
             <img
               id="back"
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
-            />
-          </a>
+              />
+        </Link>
           <img
             id="twitter"
             src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
@@ -58,6 +61,7 @@ class FormTwo extends React.Component {
             </h4>
           </p>
         </div>
+      </div>
       </div>
     );
   }

@@ -17,24 +17,29 @@ class Signup extends React.Component {
 
   checkemail = (e) => {
     this.validateEmail(e.target.value)
-      ? fetch("https://twittrer.herokuapp.com/email", {
+      ? fetch("http://twittrer.herokuapp.com/email", {
           method: "POST",
-          body: new FormData().append("email", e.target.value)
+          mode:"no-cors",
+          body: new FormData().append("email", e.target.value.toString()), 
         })
-          .then((response) => response.json())
+          .then((response) => response.text())
           .then((result) => {
-            result === "no"
-              ? this.setState({ error: "Email has already been taken." })
-              : this.setState({ error: "" });
+            if(result === "no"){
+              this.setState({ error: "Email has already been taken." })}
+            else{
+              this.setState({ error: "" });this.checker()}
           })
           .catch((error) => console.error(error))
       : this.setState({ error: "Please enter a valid email." });
   };
 
-  validateEmail = (email) => {
-    var regex = /\S+@\S+\.\S+/;
-    return regex.test(email);
-  };
+ validateEmail = (email) => {
+   var regex = /\S+@\S+\.\S+/;
+  return regex.test(email);
+ };
+ checker = (e) => {
+  if(this.props.username2){document.getElementById("signupinformation").style.visibility="visible"}
+ }
 
   render() {
   
@@ -48,7 +53,7 @@ class Signup extends React.Component {
               width="60px"
               height="60px"
             />
-            <Link to="/form2" style={{ textDecoration: "none" }}>
+            <Link to="/form2" style={{ textDecoration: "none" }} id="signupinformation" style={{visibility: "hidden"}}>
               <Button
                 type="submit"
                 className="button"
@@ -110,6 +115,7 @@ class Signup extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
+    username2:state.username2
   };
 };
 const mapDispatchToProps = (dispatch) => {

@@ -10,18 +10,20 @@ class FormFour extends React.Component {
     this.state = {};
   }
 
+
   render() {
     return (
+      <div className="container_image">
       <div className="container_form4">
         <div className="form4_button">
-          <a href="javascript:history.go(-1)">
+        <Link to="/form3" style={{ textDecoration: "none" }}>
             <img
               id="back"
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
-            />
-          </a>
+              />
+        </Link>
           <img
             id="twitter"
             src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
@@ -55,8 +57,10 @@ class FormFour extends React.Component {
           <h4>Didn't receive email?</h4>
         </div>
       </div>
+      </div>
     );
   }
+
 }
 
 // Redux

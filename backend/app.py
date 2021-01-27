@@ -10,6 +10,7 @@ import db
 
 # define app as flask
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'qwertyasdf'
 
 # enables CORS
 CORS(app)
@@ -60,11 +61,12 @@ def signout():
 
 @app.route('/email', methods=['POST'])
 def email():
+        print(request)
         users = db.db.users
         existing_user = users.find_one({'email' : request.form['email']})
         if existing_user is None:
             return "ok"
-        return "no"
+        return "no" 
 
 @app.route('/users', methods=['GET'])
 def users():
@@ -82,5 +84,4 @@ def posts():
 
 # run the flask app
 if __name__ == '__main__':
-    app.secret_key = 'qwertyasdf'
     app.run(debug=True, host="0.0.0.0", port=environ.get("PORT", 5000))

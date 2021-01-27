@@ -5,6 +5,7 @@ import React from "react";
 import "./Signup.css";
 
 class FormThree extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -12,18 +13,19 @@ class FormThree extends React.Component {
   }
 
   render() {
-    console.log(this.props.date2)
+
     return (
+      <div className="container_image">
       <div className="container_form3">
         <div className="form3_button">
-          <a href="javascript:history.go(-1)">
+        <Link to="/form2" style={{ textDecoration: "none" }}>
             <img
               id="back"
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
-            />
-          </a>
+              />
+        </Link>
           <h4>Step 3 of 5</h4>
         </div>
         <br />
@@ -97,6 +99,7 @@ class FormThree extends React.Component {
             </Link>
           </form>
         </div>
+      </div>
       </div>
     );
   }

@@ -24,7 +24,6 @@ class Date extends React.Component {
           <InputLabel htmlFor="outlined-month-native-simple">Month</InputLabel>
           <Select
             native
-            value={this.props.month2}
             onChange={(e)=>{this.props.month([e.target.options[e.target.selectedIndex].text])}}
             label="month"
             inputProps={{
@@ -52,7 +51,6 @@ class Date extends React.Component {
           <InputLabel htmlFor="outlined-day-native-simple">Day</InputLabel>
           <Select
             native
-            value={this.props.day2}
             onChange={(e)=>{this.props.day([e.target.options[e.target.selectedIndex].text])}}
             label="day"
             inputProps={{
@@ -100,7 +98,6 @@ class Date extends React.Component {
           <InputLabel htmlFor="outlined-year-native-simple">Year</InputLabel>
           <Select
             native
-            value={this.props.year2}
             onChange={(e)=>{this.props.year([e.target.options[e.target.selectedIndex].text])}}
             label="year"
             inputProps={{

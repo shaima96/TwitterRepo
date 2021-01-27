@@ -10,6 +10,7 @@
 - Deployment : Firebase
 
 ## Links ##
+- frontend : https://twittrer2.web.app/
 - backend: https://twittrer.herokuapp.com/
 
 ## New code lines used 
