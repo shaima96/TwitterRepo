@@ -6,6 +6,7 @@ import React from "react";
 import "./Signup.css";
 
 class FormThree extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +14,7 @@ class FormThree extends React.Component {
   }
 
   render() {
-    console.log(this.props.date2)
+
     return (
       <div className="container_form3">
         <div className="form3_button">

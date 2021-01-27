@@ -1,10 +1,10 @@
-import { Button, TextField } from "@material-ui/core";
-import { signup } from "../../redux/actions";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import React from "react";
-import Date from "./Date";
-import "./Signup.css";
+// import { Button, TextField } from "@material-ui/core";
+// import { signup } from "../../redux/actions";
+// import { Link } from "react-router-dom";
+// import { connect } from "react-redux";
+// import React from "react";
+// import Date from "./Date";
+// import "./Signup.css";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -44,10 +44,11 @@ class Signup extends React.Component {
       : this.setState({ error: "Please enter a valid email." });
   };
 
-  validateEmail = (email) => {
-    var regex = /\S+@\S+\.\S+/;
-    return regex.test(email);
-  };
+ validateEmail = (email) => {
+   var regex = /\S+@\S+\.\S+/;
+  return regex.test(email);
+ };
+
 
   render() {
   

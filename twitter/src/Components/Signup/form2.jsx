@@ -4,11 +4,12 @@ import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 class FormTwo extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  
   render() {
     return (
       <div className="container_form2">
