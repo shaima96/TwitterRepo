@@ -1,6 +1,6 @@
 import { Button, TextField } from "@material-ui/core";
-import { signup } from "../../redux/actions";
 import { Link } from "react-router-dom";
+import { username,email } from "../../redux/actions";
 import { connect } from "react-redux";
 import React from "react";
 import Date from "./Date";
@@ -11,28 +11,15 @@ class Signup extends React.Component {
     super(props);
     this.state = {
       error: "",
-      username:"",
-      email:"",
     };
   }
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-    this.props.signup([
-      this.state.username,
-      this.state.email,
-    ])
-  };
 
   checkemail = (e) => {
     this.validateEmail(e.target.value)
       ? fetch("https://twittrer.herokuapp.com/email", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: e.target.value,
+          body: new FormData().append("email", e.target.value)
         })
           .then((response) => response.json())
           .then((result) => {
@@ -80,7 +67,9 @@ class Signup extends React.Component {
                 type="text"
                 name="username"
                 onChange={(e) => {
-                  this.handleChange(e);
+                  this.props.username([
+                    e.target.value
+                  ])
                 }}
                 variant="outlined"
                 required
@@ -94,7 +83,9 @@ class Signup extends React.Component {
                 name="email"
                 onChange={(e) => {
                   this.checkemail(e);
-                  this.handleChange(e);
+                  this.props.email([
+                    e.target.value
+                  ])
                 }}
                 variant="outlined"
                 error={!!this.state.error}
@@ -119,13 +110,15 @@ class Signup extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    signup2: state.signup2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    signup: (x) => {
-      dispatch(signup(x));
+    email: (x) => {
+      dispatch(email(x));
+    },    
+    username: (x) => {
+      dispatch(username(x));
     },
   };
 };

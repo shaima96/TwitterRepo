@@ -1,5 +1,6 @@
 import { TextField,Button} from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
 import React from 'react';
 import './Signup.css';
 
@@ -8,18 +9,18 @@ class FormFive extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            password:""
         }
     }
 
     register = (e) => {
         fetch("https://twittrer.herokuapp.com/signup", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: e.target.value,
+          body: new FormData()
+          .append("username", this.props.username2)
+          .append("password",this.state.password)
+          .append("email",this.props.email2)
+          .append("dob",this.props.day2+" / "+this.props.month2+" / "+this.props.year2)
         })
           .then((response) => response.json())
           .then((result) => {
@@ -27,6 +28,15 @@ class FormFive extends React.Component {
               localStorage.setItem({result})
     })
 }
+
+    reveal = (e) => {
+        var x = document.getElementById("signuppassword");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+    }
 
     render() {
         return (
@@ -46,14 +56,32 @@ class FormFive extends React.Component {
                             label='Password'
                             type='password'
                             name='password'
+                            id='signuppassword'
+                            onChange={(e)=>{this.setState({password:[e.target.value]})}}
                             variant="outlined"
                         />
-                        <h4>Reveal password</h4>
+                        <h4 onClick={this.reveal} style={{cursor:"pointer"}}>Reveal password</h4>
                 </div>
             </div>
 
         )
     }
 }
-
-export default FormFive
+// Redux
+const mapStateToProps = (state) => {
+    return {
+      day2: state.day2,
+      month2: state.month2,
+      year2: state.year2,
+      email2: state.email2,
+      username2: state.username2,
+    };
+  };
+  const mapDispatchToProps = (dispatch) => {
+    return {
+  
+    };
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(FormFive);
+  

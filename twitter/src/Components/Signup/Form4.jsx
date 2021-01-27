@@ -1,5 +1,4 @@
 import { TextField, Button } from "@material-ui/core";
-import { signup } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import React from "react";
@@ -41,7 +40,7 @@ class FormFour extends React.Component {
         <div className="div_form4">
           <h2>We sent you a code</h2>
           <br />
-          <h3>Enter it below to verify {this.props.signup[1]}</h3>
+          <h3>Enter it below to verify {this.props.email2}</h3>
           <br />
           <TextField
             className="Input"
@@ -63,14 +62,13 @@ class FormFour extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    signup: state.signup,
+    email2:state.email2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    signup: (x) => {
-      dispatch(signup(x));
-    },
+
+
   };
 };
 

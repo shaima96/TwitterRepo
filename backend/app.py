@@ -12,7 +12,7 @@ import db
 app = Flask(__name__)
 
 # enables CORS
-cors = CORS(app)
+CORS(app)
 
 # locate the directory of the app file
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -48,7 +48,7 @@ def signup():
         existing_user = users.find_one({'username' : request.form['username']})
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'username' : request.form['username'],'email' : request.form['email'],  'password' : hashpass})
+            users.insert({'username' : request.form['username'], 'password' : hashpass, 'email' : request.form['email'], 'dob' : request.form['dob']})
             return redirect(url_for('signin'))
         return 'Username taken!'
     return render_template('signup.html')
@@ -65,6 +65,20 @@ def email():
         if existing_user is None:
             return "ok"
         return "no"
+
+@app.route('/users', methods=['GET'])
+def users():
+        s=""
+        for user in db.db.users.find():
+            s+=str(user)+"\n"
+        return s
+
+@app.route('/posts', methods=['GET'])
+def posts():
+        s=""
+        for post in db.db.posts.find():
+            s+=str(post)+"\n"
+        return s
 
 # run the flask app
 if __name__ == '__main__':
