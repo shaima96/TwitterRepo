@@ -9,10 +9,13 @@
 - Database : AtlasDB : Pymongo
 - Deployment : Firebase
 
+## Links ##
+- backend: https://twittrer.herokuapp.com/
+
 ## New code lines used 
 - to deploy docker to heroku
--```docker build . -t name```
--```heroku login```
--```heroku container:login```
--```heroku container:push web --app=herokuname```
--```heroku container:release web --app=herokuname```
+- ```docker build . -t name```
+- ```heroku login```
+- ```heroku container:login```
+- ```heroku container:push web --app=herokuname```
+- ```heroku container:release web --app=herokuname```
