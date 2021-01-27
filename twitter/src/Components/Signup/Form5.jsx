@@ -12,20 +12,23 @@
 //         }
 //     }
 
-//     register = () => {
-//         fetch("http://127.0.0.1:5000/signup", {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json",
-//             "Access-Control-Allow-Origin": "*",
-//           },
-//           body: e.target.value,
-//         })
-//           .then((response) => response.json())
-//           .then((result) => {
-//               localStorage.setItem({})
-//     })
-// }
+
+    register = (e) => {
+        fetch("https://twittrer.herokuapp.com/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: e.target.value,
+        })
+          .then((response) => response.json())
+          .then((result) => {
+              console.log(result)
+              localStorage.setItem({result})
+    })
+}
+
 
 //     render() {
 //         return (

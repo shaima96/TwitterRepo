@@ -5,13 +5,13 @@
 export const signup = (x) => {
   return {
     type: "signup",
-    signup: x,
+    signup2: x,
   };
 };
 
 export const date = (x) => {
   return {
     type: "date",
-    date: x,
+    date2: x,
   };
 };

@@ -1,22 +1,19 @@
+import { Button, TextField } from "@material-ui/core";
+import { signup,date } from "../../redux/actions";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import React from "react";
 import "./Signup.css";
-import { Button, TextField } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
 class FormThree extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: "",
-      dateOfBirth: "",
     };
   }
 
   render() {
-    const { name, email, dateOfBirth } = this.state;
-
 
     return (
       <div className="container_form3">
@@ -38,10 +35,10 @@ class FormThree extends React.Component {
           <form className="signup">
             <TextField
               className="Input"
-              label="name"
+              label="Name"
               type="text"
               name="name"
-              value={name}
+              value={this.props.signup2?this.props.signup2[0]:""}
               variant="outlined"
               InputProps={{
                 readOnly: true,
@@ -54,7 +51,7 @@ class FormThree extends React.Component {
               label="Email"
               type="email"
               name="email"
-              value={email}
+              value={this.props.signup2?this.props.signup2[1]:""}
               variant="outlined"
               InputProps={{
                 readOnly: true,
@@ -67,7 +64,7 @@ class FormThree extends React.Component {
               label="Birth date"
               type="text"
               name="text"
-              value={dateOfBirth}
+              value={this.props.date2?this.props.date2[0]+" / "+this.props.date2[1]+" / "+this.props.date2[2]:""}
               variant="outlined"
               InputProps={{
                 readOnly: true,
@@ -107,4 +104,22 @@ class FormThree extends React.Component {
   }
 }
 
-export default FormThree;
+// Redux
+const mapStateToProps = (state) => {
+  return {
+    signup2: state.signup2,
+    date2: state.data2,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signup: (x) => {
+      dispatch(signup(x));
+    },
+    date: (x) => {
+      dispatch(date(x));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormThree);

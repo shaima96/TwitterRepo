@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, session, redirect, j
 from flask_jwt import JWT, jwt_required, current_identity
 from bson import json_util, ObjectId
 from flask_cors import CORS
+from os import environ
 import bcrypt
 import json
 import os
@@ -68,4 +69,4 @@ def email():
 # run the flask app
 if __name__ == '__main__':
     app.secret_key = 'qwertyasdf'
-    app.run(debug=True, host="0.0.0.0", port="5000")
+    app.run(debug=True, host="0.0.0.0", port=environ.get("PORT", 5000))
