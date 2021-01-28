@@ -95,6 +95,9 @@
 .container_date{
     margin-left: 26px;
 }
+.container_date .formControl1{
+    width: 80px;
+}
 
 /*Forget password*/
 

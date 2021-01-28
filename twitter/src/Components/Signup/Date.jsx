@@ -21,7 +21,7 @@ class Date extends React.Component {
     return (
       <div className='container_date'>
         <FormControl variant="outlined" id='day_form' className="formControl">
-          <InputLabel htmlFor="outlined-month-native-simple">Month</InputLabel>
+          <InputLabel htmlFor="outlined-month-native-simple">Month </InputLabel>
           <Select
             native
             onChange={(e)=>{this.props.month([e.target.options[e.target.selectedIndex].text])}}
@@ -47,14 +47,14 @@ class Date extends React.Component {
           </Select>
         </FormControl>
         
-        <FormControl variant="outlined" className="formControl">
-          <InputLabel htmlFor="outlined-day-native-simple">Day</InputLabel>
+        <FormControl variant="outlined" className="formControl1">
+          <InputLabel htmlFor="outlined-day-native-simple">Day </InputLabel>
           <Select
             native
             onChange={(e)=>{this.props.day([e.target.options[e.target.selectedIndex].text])}}
             label="day"
             inputProps={{
-              name: 'day',
+              name: 'day ',
               id: 'outlined-day-native-simple',
             }}
           >
@@ -95,7 +95,7 @@ class Date extends React.Component {
         </FormControl>
   
         <FormControl variant="outlined" className="formControl">
-          <InputLabel htmlFor="outlined-year-native-simple">Year</InputLabel>
+          <InputLabel htmlFor="outlined-year-native-simple">Year </InputLabel>
           <Select
             native
             onChange={(e)=>{this.props.year([e.target.options[e.target.selectedIndex].text])}}
