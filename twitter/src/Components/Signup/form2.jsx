@@ -16,14 +16,14 @@ class FormTwo extends React.Component {
 
       <div className="container_form2">
         <div className="form2_button">
-          <a href="javascript:history.go(-1)">
+        <Link to="/signup" style={{ textDecoration: "none" }}>
             <img
               id="back"
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
-            />
-          </a>
+              />
+        </Link>
           <img
             id="twitter"
             src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"

@@ -1,5 +1,4 @@
 import { Button, TextField } from "@material-ui/core";
-import { signup,date } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import React from "react";
@@ -19,14 +18,14 @@ class FormThree extends React.Component {
       <div className="container_image">
       <div className="container_form3">
         <div className="form3_button">
-          <a href="javascript:history.go(-1)">
+        <Link to="/form2" style={{ textDecoration: "none" }}>
             <img
               id="back"
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
-            />
-          </a>
+              />
+        </Link>
           <h4>Step 3 of 5</h4>
         </div>
         <br />
@@ -39,7 +38,7 @@ class FormThree extends React.Component {
               label="Name"
               type="text"
               name="name"
-              value={this.props.signup2?this.props.signup2[0]:""}
+              value={this.props.username2?this.props.username2:""}
               variant="outlined"
               InputProps={{
                 readOnly: true,
@@ -52,7 +51,7 @@ class FormThree extends React.Component {
               label="Email"
               type="email"
               name="email"
-              value={this.props.signup2?this.props.signup2[1]:""}
+              value={this.props.email2?this.props.email2:""}
               variant="outlined"
               InputProps={{
                 readOnly: true,
@@ -65,7 +64,7 @@ class FormThree extends React.Component {
               label="Birth date"
               type="text"
               name="text"
-              value={this.props.date2?this.props.date2[0]+" / "+this.props.date2[1]+" / "+this.props.date2[2]:""}
+              value={this.props.day2?this.props.day2+" / "+this.props.month2+" / "+this.props.year2:""}
               variant="outlined"
               InputProps={{
                 readOnly: true,
@@ -109,18 +108,16 @@ class FormThree extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    signup2: state.signup2,
-    date2: state.data2,
+    day2: state.day2,
+    month2: state.month2,
+    year2: state.year2,
+    email2: state.email2,
+    username2: state.username2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    signup: (x) => {
-      dispatch(signup(x));
-    },
-    date: (x) => {
-      dispatch(date(x));
-    },
+
   };
 };
 

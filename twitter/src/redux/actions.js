@@ -2,16 +2,33 @@
 
 // Creates Redux functions that edit the Redux variables to be used by any React connected component
 
-export const signup = (x) => {
+export const username = (x) => {
   return {
-    type: "signup",
-    signup2: x,
+    type: "username",
+    username2: x,
   };
 };
-
-export const date = (x) => {
+export const email = (x) => {
   return {
-    type: "date",
-    date2: x,
+    type: "email",
+    email2: x,
+  };
+};
+export const day = (x) => {
+  return {
+    type: "day",
+    day2: x,
+  };
+};
+export const month = (x) => {
+  return {
+    type: "month",
+    month2: x,
+  };
+};
+export const year = (x) => {
+  return {
+    type: "year",
+    year2: x,
   };
 };

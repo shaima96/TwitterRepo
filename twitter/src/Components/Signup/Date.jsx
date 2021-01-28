@@ -1,8 +1,8 @@
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
+import { day,month,year } from "../../redux/actions";
 import Select from '@material-ui/core/Select';
-import { date } from "../../redux/actions";
 import { connect } from "react-redux";
 import React from 'react';
 import './Signup.css';
@@ -12,20 +12,10 @@ class Date extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
-        day: '',
-        month:'',
-        year:'',
+
       }
   }
 
-  handleChange = (event) => {
-    const name = event.target.name;
-    this.setState({
-      [name]: event.target.options[event.target.selectedIndex].text,
-    });
-    this.props.date([this.state.day,this.state.month,this.state.year])
-
-  };
   render(){
     
     return (
@@ -34,8 +24,7 @@ class Date extends React.Component {
           <InputLabel htmlFor="outlined-month-native-simple">Month</InputLabel>
           <Select
             native
-            value={this.state.month}
-            onChange={this.handleChange}
+            onChange={(e)=>{this.props.month([e.target.options[e.target.selectedIndex].text])}}
             label="month"
             inputProps={{
               name: 'month',
@@ -62,8 +51,7 @@ class Date extends React.Component {
           <InputLabel htmlFor="outlined-day-native-simple">Day</InputLabel>
           <Select
             native
-            value={this.state.day}
-            onChange={this.handleChange}
+            onChange={(e)=>{this.props.day([e.target.options[e.target.selectedIndex].text])}}
             label="day"
             inputProps={{
               name: 'day',
@@ -110,8 +98,7 @@ class Date extends React.Component {
           <InputLabel htmlFor="outlined-year-native-simple">Year</InputLabel>
           <Select
             native
-            value={this.state.year}
-            onChange={this.handleChange}
+            onChange={(e)=>{this.props.year([e.target.options[e.target.selectedIndex].text])}}
             label="year"
             inputProps={{
               name: 'year',
@@ -209,13 +196,16 @@ class Date extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    date2: state.date2,
+    day2: state.day2,
+    month2: state.month2,
+    year2: state.year2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    date: (x) => {dispatch(date(x));
-    },
+    day: (x) => {dispatch(day(x))},
+    month: (x) => {dispatch(month(x))},
+    year: (x) => {dispatch(year(x))},
   };
 };
 
