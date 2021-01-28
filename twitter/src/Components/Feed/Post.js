@@ -1,4 +1,4 @@
-import React, { Component, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import "./Post.css";
 import { Avatar } from "@material-ui/core";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
@@ -7,35 +7,29 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
-function Post (){
-  
+const Post = forwardRef(
+  ({ displayName, username, verified, text, image, avatar }, ref) => {
     return (
-      <div className="post" >
+      <div className="post" ref={ref}>
         <div className="post__avatar">
-          {/* <Avatar src={avatar} /> */}
-          <Avatar src='https://pbs.twimg.com/profile_images/1242623772437426176/C0WdBcXb_400x400.jpg' />
+          <Avatar src={avatar} />
         </div>
         <div className="post__body">
           <div className="post__header">
             <div className="post__headerText">
               <h3>
-                {/* {displayName}{" "} */}
-                Hiba Tamimi
+                {displayName}{" "}
                 <span className="post__headerSpecial">
-                   <VerifiedUserIcon className="post__badge" /> @
-                  {/* {username} */}
-                  hibatamimi
+                  {verified && <VerifiedUserIcon className="post__badge" />} @
+                  {username}
                 </span>
               </h3>
             </div>
             <div className="post__headerDescription">
-              {/* <p>{text}</p> */}
-              lets start the challange 
+              <p>{text}</p>
             </div>
           </div>
-          {/* <img src={image} alt="" /> */}
-            <img src=' https://steamuserimages-a.akamaihd.net/ugc/849346468950683465/3647B7FB74DF0AB0A30B3AD17BECA2D30E75F7A2/' alt="" />
-         
+          <img src={image} alt=""  />
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />
@@ -46,5 +40,6 @@ function Post (){
       </div>
     );
   }
+);
 
 export default Post;

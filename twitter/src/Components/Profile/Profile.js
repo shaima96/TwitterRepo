@@ -9,9 +9,18 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
-function Profile (){
-
+class Profile extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+    
+        };
+      }
+      
+      render (){
     return (
+
+
         // --------------------------------header------------------------------------//
         <div className='profile'>
             <div className='profile__header'>
@@ -19,6 +28,7 @@ function Profile (){
                 <h5> 5 Tweets </h5>
             </div>
             <div>
+
                 {/* ---------------------profile box-----------------------*/}
                 <div className='profile__info'>
                     <form>
@@ -75,5 +85,5 @@ function Profile (){
         </div>
     )
 }
-
+}
 export default Profile;
