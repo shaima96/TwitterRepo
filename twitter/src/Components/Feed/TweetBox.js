@@ -34,12 +34,12 @@ const sendTweet = (e) => {
                     placeholder="What's happining?" 
                     type='text' />
                 </div>
-                <input 
+                {/* <input 
                 onChange={e => setTweetImage(e.target.value)}
                 value={tweetImage}
                 className='tweetBox__imageInput'
                  placeholder="Enter image URL" 
-                 type='text' />
+                 type='text' /> */}
 
                 <Button 
                 onClick={sendTweet}
