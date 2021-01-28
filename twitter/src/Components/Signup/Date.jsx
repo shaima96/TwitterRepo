@@ -1,56 +1,30 @@
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
+import { day,month,year } from "../../redux/actions";
 import Select from '@material-ui/core/Select';
-import { date } from "../../redux/actions";
 import { connect } from "react-redux";
 import React from 'react';
 import './Signup.css';
 
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
-
-class Signup extends React.Component {
+class Date extends React.Component {
   constructor(props) {
       super(props)
       this.state = {
+
       }
   }
 
   render(){
-
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    day: '',
-    month:'',
-    year:'',
-  });
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
-    this.props.date([this.state.day,this.state.month,this.state.year])
-  };
-
+    
     return (
       <div className='container_date'>
-        <FormControl variant="outlined"  id='day_form' className={classes.formControl}>
+        <FormControl variant="outlined" id='day_form' className="formControl">
           <InputLabel htmlFor="outlined-month-native-simple">Month</InputLabel>
           <Select
             native
-            value={state.month}
-            onChange={handleChange}
+            onChange={(e)=>{this.props.month([e.target.options[e.target.selectedIndex].text])}}
             label="month"
             inputProps={{
               name: 'month',
@@ -73,12 +47,11 @@ class Signup extends React.Component {
           </Select>
         </FormControl>
         
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl variant="outlined" className="formControl">
           <InputLabel htmlFor="outlined-day-native-simple">Day</InputLabel>
           <Select
             native
-            value={state.day}
-            onChange={handleChange}
+            onChange={(e)=>{this.props.day([e.target.options[e.target.selectedIndex].text])}}
             label="day"
             inputProps={{
               name: 'day',
@@ -121,12 +94,11 @@ class Signup extends React.Component {
           </Select>
         </FormControl>
   
-        <FormControl variant="outlined" className={classes.formControl}>
+        <FormControl variant="outlined" className="formControl">
           <InputLabel htmlFor="outlined-year-native-simple">Year</InputLabel>
           <Select
             native
-            value={state.year}
-            onChange={handleChange}
+            onChange={(e)=>{this.props.year([e.target.options[e.target.selectedIndex].text])}}
             label="year"
             inputProps={{
               name: 'year',
@@ -224,13 +196,16 @@ class Signup extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    date: state.date,
+    day2: state.day2,
+    month2: state.month2,
+    year2: state.year2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    date: (x) => {dispatch(date(x));
-    },
+    day: (x) => {dispatch(day(x))},
+    month: (x) => {dispatch(month(x))},
+    year: (x) => {dispatch(year(x))},
   };
 };
 

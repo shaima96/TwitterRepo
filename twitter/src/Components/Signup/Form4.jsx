@@ -1,5 +1,4 @@
 import { TextField, Button } from "@material-ui/core";
-import { signup } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import React from "react";
@@ -14,16 +13,17 @@ class FormFour extends React.Component {
 
   render() {
     return (
+      <div className="container_image">
       <div className="container_form4">
         <div className="form4_button">
-          <a href="javascript:history.go(-1)">
+        <Link to="/form3" style={{ textDecoration: "none" }}>
             <img
               id="back"
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
-            />
-          </a>
+              />
+        </Link>
           <img
             id="twitter"
             src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
@@ -42,7 +42,7 @@ class FormFour extends React.Component {
         <div className="div_form4">
           <h2>We sent you a code</h2>
           <br />
-          <h3>Enter it below to verify {this.props.signup[1]}</h3>
+          <h3>Enter it below to verify {this.props.email2}</h3>
           <br />
           <TextField
             className="Input"
@@ -57,6 +57,7 @@ class FormFour extends React.Component {
           <h4>Didn't receive email?</h4>
         </div>
       </div>
+      </div>
     );
   }
 
@@ -65,14 +66,13 @@ class FormFour extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    signup: state.signup,
+    email2:state.email2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    signup: (x) => {
-      dispatch(signup(x));
-    },
+
+
   };
 };
 

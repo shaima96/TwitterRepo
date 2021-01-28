@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css') }}">
     <title>Sign Up</title>
 </head>
@@ -20,6 +21,8 @@
                     <input type="text" class="field" name="email" >
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="field" name="password">
+                    <label for="exampleInputPassword1">Date of Birth</label>
+                    <input type="text" class="field" name="dob">
                     <br>
                     <button type="submit" class="btn">Register</button>
                 </form>
