@@ -12,6 +12,7 @@ class Signup extends React.Component {
     this.state = {
       error: "",
       error2: "",
+      redirect: false,
     };
   }
 
@@ -61,7 +62,7 @@ class Signup extends React.Component {
 }
 
   render() {
-  
+
     return (
       <div className="container_image">
         <div className="container_signup">

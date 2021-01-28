@@ -6,15 +6,12 @@
   }
   
   .post__body {
-    flex: 5;
-    /* padding-left: 10px;
-    padding-right: 10px; */
+    flex: 1;
+    padding: 10px;
   }
   
   .post__body > img {
     border-radius: 20px;
-    width: 600px;
-    height: 300px;
   }
   
   .post__footer {
