@@ -36,7 +36,7 @@
    - Run the server:
     ```
     cd Backend/
-    python app.py runserver
+    python app.py
 
 2. frontend
    - Go from root directory to client directory
