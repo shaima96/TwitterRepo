@@ -3,6 +3,7 @@ This repo is a replica version of the famous web app twitter
 
 ![Capture](https://user-images.githubusercontent.com/37650536/105643505-f0079200-5e98-11eb-85f4-0973ebee10be.PNG)
 
+
 ## Technologies used
 - Javascript 
 - React 
@@ -13,6 +14,10 @@ This repo is a replica version of the famous web app twitter
 - Firebase
 - Material UI
 
+
+## Links ##
+- frontend : https://twittrer2.web.app/
+- backend: https://twittrer.herokuapp.com/
 
 
 ## How to run it :
