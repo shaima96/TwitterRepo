@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, session, redirect, jsonify, Response
 from flask_jwt import JWT, jwt_required, current_identity
 from bson import json_util, ObjectId
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 from os import environ
 import bcrypt
 import json
@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'qwertyasdf'
 
 # enables CORS
-CORS(app)
+cors = CORS(app)
 
 # locate the directory of the app file
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -61,9 +61,16 @@ def signout():
 
 @app.route('/email', methods=['POST'])
 def email():
-        print(request)
         users = db.db.users
         existing_user = users.find_one({'email' : request.form['email']})
+        if existing_user is None:
+            return "ok"
+        return "no" 
+
+@app.route('/user', methods=['POST'])
+def user():
+        users = db.db.users
+        existing_user = users.find_one({'username' : request.form['username']})
         if existing_user is None:
             return "ok"
         return "no" 

@@ -16,14 +16,14 @@ class FormFive extends React.Component {
 
 
     register = (e) => {
+        var row=new FormData()
+          row.append("username", this.props.username2)
+          row.append("password",this.state.password)
+          row.append("email",this.props.email2)
+          row.append("dob",this.props.day2+" / "+this.props.month2+" / "+this.props.year2)
         fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/signup", {
           method: "POST",          
-          mode:"no-cors",
-          body: new FormData()
-          .append("username", this.props.username2)
-          .append("password",this.state.password)
-          .append("email",this.props.email2)
-          .append("dob",this.props.day2+" / "+this.props.month2+" / "+this.props.year2)
+          body: row,
         })
           .then((response) => response.text())
           .then((result) => {

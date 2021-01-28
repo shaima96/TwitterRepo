@@ -11,16 +11,34 @@ class Signup extends React.Component {
     super(props);
     this.state = {
       error: "",
+      error2: "",
     };
   }
 
+  checkuser = (e) => {
+    var row=new FormData()
+    row.append('username', e.target.value)
+       fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/user", {
+          method: "POST",
+          body: row, 
+        })
+          .then((response) => response.text())
+          .then((result) => {
+            if(result === "no"){
+              this.setState({ error2: "Username has already been taken." })}
+            else{
+              this.setState({ error2: "" });this.checker()}
+          })
+          .catch((error) => console.error(error))
+  };
 
   checkemail = (e) => {
+    var row=new FormData()
+    row.append('email', e.target.value)
     this.validateEmail(e.target.value)
-      ? fetch("http://twittrer.herokuapp.com/email", {
+      ? fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/email", {
           method: "POST",
-          mode:"no-cors",
-          body: new FormData().append("email", e.target.value.toString()), 
+          body: row, 
         })
           .then((response) => response.text())
           .then((result) => {
@@ -38,8 +56,9 @@ class Signup extends React.Component {
   return regex.test(email);
  };
  checker = (e) => {
-  if(this.props.username2){document.getElementById("signupinformation").style.visibility="visible"}
- }
+  if(this.props.username2&&this.props.email2&&!this.state.error&&!this.state.error2){document.getElementById("signupinformation").style.visibility="visible"}
+  else{document.getElementById("signupinformation").style.visibility="hidden"}
+}
 
   render() {
   
@@ -72,11 +91,14 @@ class Signup extends React.Component {
                 type="text"
                 name="username"
                 onChange={(e) => {
+                  this.checkuser(e);
                   this.props.username([
                     e.target.value
                   ])
                 }}
                 variant="outlined"
+                error={!!this.state.error2}
+                helperText={this.state.error2}
                 required
               />
               <br />
@@ -115,7 +137,8 @@ class Signup extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    username2:state.username2
+    username2:state.username2,
+    email2:state.email2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
