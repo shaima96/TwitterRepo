@@ -24,7 +24,7 @@ class Sidebar extends Component {
   return (
     <div className="sidebar">
       <TwitterIcon className="sidebar__twitterIcon" />
-   <NavLink className='link' to = '/homepage'> <SidebarOption active Icon={HomeIcon} text="Home"/> </NavLink>
+   <NavLink className='link' to = '/homepage'> <SidebarOption id='nav' active Icon={HomeIcon} text="Home"/> </NavLink>
      
       <SidebarOption Icon={SearchIcon} text="Explore"  />
       <SidebarOption Icon={NotificationsNoneIcon} text="Notifications" />
@@ -35,7 +35,7 @@ class Sidebar extends Component {
      
       <SidebarOption Icon={MoreHorizIcon} text="More" />
 
-      <Button variant="outlined" className="sidebar__tweet" fullWidth>
+      <Button variant="outlined" className="sidebar__tweet" >
         Tweet
       </Button>
     </div>
