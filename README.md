@@ -37,7 +37,6 @@
     ```
     cd Backend/
     python app.py runserver
-    ```
 
 2. frontend
    - Go from root directory to client directory
@@ -49,7 +48,7 @@
    ```
    npm start
    ```
-
+   
 ## Teams
 - [Hamdallah](https://github.com/Hamdalla2)
 - [Hiba](https://github.com/hibtmimi)
