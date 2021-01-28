@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, request, session, redirect, jsonify, Response
 from flask_jwt import JWT, jwt_required, current_identity
+from flask_cors import CORS, cross_origin
 from bson import json_util, ObjectId
-from flask_cors import CORS
 from os import environ
 import bcrypt
 import json
@@ -10,10 +10,13 @@ import db
 
 # define app as flask
 app = Flask(__name__)
+
+# jwt
 app.config['SECRET_KEY'] = 'qwertyasdf'
+# jwt = JWT(app, authenticate, identity)
 
 # enables CORS
-CORS(app)
+cors = CORS(app)
 
 # locate the directory of the app file
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -32,10 +35,12 @@ def signin():
     if request.method == 'POST':
         users = db.db.users
         signin_user = users.find_one({'username' : request.form['username']})
+        if signin_user is None:
+            signin_user = users.find_one({'email' : request.form['username']})
         if signin_user:
             if bcrypt.hashpw(request.form['password'].encode('utf-8'), signin_user['password']) == signin_user['password']:
                 session['username'] = request.form['username']
-                return redirect(url_for('index'))
+                return bcrypt.hashpw(request.form['password'].encode('utf-8'), signin_user['_id'])
         return 'Invalid username or password'
     return render_template('signin.html')
 
@@ -61,9 +66,16 @@ def signout():
 
 @app.route('/email', methods=['POST'])
 def email():
-        print(request)
         users = db.db.users
         existing_user = users.find_one({'email' : request.form['email']})
+        if existing_user is None:
+            return "ok"
+        return "no" 
+
+@app.route('/user', methods=['POST'])
+def user():
+        users = db.db.users
+        existing_user = users.find_one({'username' : request.form['username']})
         if existing_user is None:
             return "ok"
         return "no" 

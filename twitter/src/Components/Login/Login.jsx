@@ -10,7 +10,8 @@ class Login extends React.Component {
         super(props)
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            redirect: false,
         }
     }
     handleChange = (e) => {
@@ -18,36 +19,11 @@ class Login extends React.Component {
 
         this.setState({ [name]: value })
     }
-    // logInCheck = (obj) => {
-    //     const requestOptions = {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(obj)
-    //     };
-    //     fetch('https://cors-anywhere.herokuapp.com/http://twittrer.herokuapp.com/signin', requestOptions)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (!data.token) {
-    //                 alert("Invalid ")
-    //             } else {
-    //                 localStorage.setItem('Authorization', data.token)
-    //                 this.setState({ email: '', password: '' })
-    //             }
-
-    //         })
-    //         .catch(err => alert("Invalid "))
-    // }
-
-    // signIn = (e) => {
-    //     e.preventDefault()
-    //     this.logInCheck(this.state)
-    // }
 
     signInCheck = (e) => {
         var role = new FormData()
         role.append("username", this.state.email)
         role.append("password", this.state.password)
-
         fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/signin", {
             method: "POST",
             body: role
@@ -56,6 +32,7 @@ class Login extends React.Component {
             .then((result) => {
                 console.log(result)
                 localStorage.setItem({ result })
+                this.setState({redirect:true})
             })
     }
     signIn = (e) => {
@@ -64,6 +41,9 @@ class Login extends React.Component {
     }
     render() {
         const { email, password } = this.state
+        if (this.state.redirect) {
+            return <Redirect to="/homepage" />
+          } else {
         return (
             <div className='container_login'>
                 <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="50px" height="50px" />
@@ -72,7 +52,7 @@ class Login extends React.Component {
                 <br />
 
                 <form className='login' onSubmit={this.signIn} >
-                    <TextField className='Input'
+                    <TextField className='Input' 
                         placeholder='Phone,Email,or username'
                         label='Phone,Email or username'
                         type='text'
@@ -113,7 +93,6 @@ class Login extends React.Component {
         )
     }
 }
-
-
+}
 
 export default Login;

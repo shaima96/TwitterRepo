@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form method=GET class="col" action="{{ url_for('signin') }}">
+                <form method=GET class="col" action="{{ url_for('signout') }}">
                     <div>You are logged in as {{session['username']}}</div>
                     <br>
                     <button type="submit" class="btn">Sign Out</button>

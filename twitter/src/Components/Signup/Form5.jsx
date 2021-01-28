@@ -1,5 +1,5 @@
 import { TextField,Button} from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import React from 'react';
 import './Signup.css';
@@ -11,26 +11,26 @@ class FormFive extends React.Component {
         this.state = {
             password:"",
             error: "",
+            redirect: false,
         }
     }
 
 
     register = (e) => {
+        var row=new FormData()
+          row.append("username", this.props.username2)
+          row.append("password",this.state.password)
+          row.append("email",this.props.email2)
+          row.append("dob",this.props.day2+" / "+this.props.month2+" / "+this.props.year2)
         fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/signup", {
           method: "POST",          
-          mode:"no-cors",
-          body: new FormData()
-          .append("username", this.props.username2)
-          .append("password",this.state.password)
-          .append("email",this.props.email2)
-          .append("dob",this.props.day2+" / "+this.props.month2+" / "+this.props.year2)
+          body: row,
         })
           .then((response) => response.text())
           .then((result) => {
-              console.log(result)
-              localStorage.setItem({result})
-    })
-}
+              localStorage.setState({redirect:true})
+        })
+    }
 
     reveal = (e) => {
         var x = document.getElementById("signuppassword");
@@ -46,6 +46,9 @@ class FormFive extends React.Component {
     }
 
     render() {
+      if (this.state.redirect) {
+        return <Redirect to="/login" />
+      } else {
         return (
             <div className='container_image'>
             <div className='container_form5'>
@@ -77,8 +80,10 @@ class FormFive extends React.Component {
             </div>
 
         )
+      }
     }
 }
+
 // Redux
 const mapStateToProps = (state) => {
     return {

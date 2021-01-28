@@ -2,6 +2,7 @@
  This repo is a replica version of the famous web app twitter
 
 ![Capture](https://user-images.githubusercontent.com/37650536/106132566-cab2a680-616c-11eb-9378-51719bed4725.PNG)
+
 ## Technologies used
 - Frontend: Javascript : React 
 - Server : Python : Flask
@@ -20,8 +21,6 @@
 - ```heroku container:push web --app=herokuname```
 - ```heroku container:release web --app=herokuname```
 
-
-
 ## How to run it :
 1. Backend
    - Go from root directory to Backend directory
@@ -37,8 +36,8 @@
    - Run the server:
     ```
     cd Backend/
-    python manage.py runserver
-    ```
+    python app.py runserver
+
 2. frontend
    - Go from root directory to client directory
    ```
@@ -49,9 +48,7 @@
    ```
    npm start
    ```
-
-
-
+   
 ## Teams
 - [Hamdallah](https://github.com/Hamdalla2)
 - [Hiba](https://github.com/hibtmimi)
