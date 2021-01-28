@@ -2,6 +2,12 @@
  This repo is a replica version of the famous web app twitter
 
 ![Capture](https://user-images.githubusercontent.com/37650536/106132566-cab2a680-616c-11eb-9378-51719bed4725.PNG)
+
+## Members ##
+- Shaima Ilhdoosh
+- Hamdallah Fatayer
+- Hiba Tamimi
+
 ## Technologies used
 - Frontend: Javascript : React 
 - Server : Python : Flask
