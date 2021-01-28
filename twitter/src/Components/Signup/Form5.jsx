@@ -49,10 +49,10 @@ class FormFive extends React.Component {
         return (
             <div className='container_image'>
             <div className='container_form5'>
-                <div className='form5_button' id="signupbutton" style={{visibility: "hidden"}}>
+                <div className='form5_button' >
                     <img  id='twitter'src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="60px" height="60px" />
                     <Link  to='/login' style={{ textDecoration: 'none' }}>
-                    <Button type='submit' className='button' onClick={this.register}> Next</Button>
+                    <Button type='submit' className='button' onClick={this.register} id="signupbutton" style={{visibility: "hidden"}}> Next</Button>
                     </Link>                </div>
                     <br/>
                 <div className='div_form5'>
