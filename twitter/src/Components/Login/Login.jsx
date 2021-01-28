@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './Login.css'
 
 
+
 class Login extends React.Component {
     constructor(props) {
         super(props)
@@ -95,7 +96,9 @@ class Login extends React.Component {
                     />
                     <br />
                     <br />
+                    <Link to='/homepage' style={{ textDecoration: 'none' }}>
                     <Button type='submit' className='button' > Log in </Button>
+                    </Link>
                     <br />
                     <Link to='/forget' style={{ textDecoration: 'none' }}>
                         <h4 id='password'>Forgot password?</h4>
