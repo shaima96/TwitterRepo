@@ -54,7 +54,7 @@ class FormFive extends React.Component {
             <div className='container_form5'>
                 <div className='form5_button' id="signupbutton" style={{visibility: "hidden"}}>
                     <img  id='twitter'src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="60px" height="60px" />
-                    <Link  to='/homepage' style={{ textDecoration: 'none' }}>
+                    <Link  to='/login' style={{ textDecoration: 'none' }}>
                     <Button type='submit' className='button' onClick={this.register}> Next</Button>
                     </Link>                </div>
                     <br/>
