@@ -28,14 +28,15 @@
     cd Backend/
     ```
    - Install dependencies
-  ```
-   pip install -r requirements.txt
-   ```
+    ```
+    pip install -r requirements.txt
+    ```
    - Run the server:
     ```
     cd Backend/
     python app.py
-
+    ```
+    
 2. frontend
    - Go from root directory to client directory
    ```
