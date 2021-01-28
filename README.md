@@ -27,12 +27,10 @@
     ```
     cd Backend/
     ```
-   - Create virtualenv
-   ```
-   python -m venv env
-   .\env\Scripts\activate
+   - Install dependencies
+  
    pip install -r requirements.txt
-   ```
+   
    - Run the server:
     ```
     cd Backend/
