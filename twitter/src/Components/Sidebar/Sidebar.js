@@ -1,4 +1,4 @@
-import React from "react";
+import React , {Component} from "react";
 import "./Sidebar.css";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import SidebarOption from "./SidebarOption";
@@ -13,7 +13,14 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
 import {NavLink} from 'react-router-dom'
 
-function Sidebar() {
+class Sidebar extends Component {
+
+  constructor (props){
+    super (props)
+  }
+  
+
+  render (){
   return (
     <div className="sidebar">
       <TwitterIcon className="sidebar__twitterIcon" />
@@ -34,5 +41,5 @@ function Sidebar() {
     </div>
   );
 }
-
+}
 export default Sidebar;
