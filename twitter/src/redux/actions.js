@@ -1,5 +1,3 @@
-// frontend/screens/redux/actions.js
-
 // Creates Redux functions that edit the Redux variables to be used by any React connected component
 
 export const username = (x) => {

@@ -28,7 +28,7 @@ class FormFive extends React.Component {
         })
           .then((response) => response.text())
           .then((result) => {
-              localStorage.setState({redirect:true})
+              this.setState({redirect:true})
         })
     }
 

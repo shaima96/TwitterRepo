@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, TextField } from '@material-ui/core'
-import { Link ,Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import './Login.css'
 
 
@@ -11,6 +11,7 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
+            error: "",
             redirect: false,
         }
     }
@@ -30,9 +31,10 @@ class Login extends React.Component {
         })
             .then((response) => response.text())
             .then((result) => {
-                console.log(result)
-                localStorage.setItem({ result })
-                this.setState({redirect:true})
+                if(result!="Invalid username or password"){
+                localStorage.setItem({ user:result })
+                this.setState({redirect:true})}
+                else{this.setState({error:"Invalid username or password"})}
             })
     }
     signIn = (e) => {
@@ -61,6 +63,8 @@ class Login extends React.Component {
                         onChange={this.handleChange}
                         required
                         variant="outlined"
+                        error={!!this.state.error}
+                        helperText={this.state.error}
                     />
                     <br />
                     <br />
@@ -73,12 +77,12 @@ class Login extends React.Component {
                         required
                         variant="outlined"
                         label='Password'
+                        error={!!this.state.error}
+                        helperText={this.state.error}
                     />
                     <br />
                     <br />
-                    <Link to='/homepage' style={{ textDecoration: 'none' }}>
                     <Button type='submit' className='button' > Log in </Button>
-                    </Link>
                     <br />
                     <Link to='/forget' style={{ textDecoration: 'none' }}>
                         <h4 id='password'>Forgot password?</h4>
