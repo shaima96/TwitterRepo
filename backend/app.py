@@ -105,7 +105,7 @@ def users():
 def tweets():
         if request.method == 'POST':
             collection = db.db.posts
-            collection.insert({'user': request.form['username'] ,'post': request.form['post']})
+            collection.insert({'user': request.form['username'] ,'post': request.form['post'], 'img': request.form['img']})
             return "ok"
         s=""
         for post in db.db.posts.find():
