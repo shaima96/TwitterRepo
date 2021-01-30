@@ -1,7 +1,6 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import "./Post.css";
 import { Avatar } from "@material-ui/core";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 
@@ -12,14 +11,14 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 
   }
   componentDidMount() {
-    fetch('http://127.0.0.1:5000/tweets',)
-      .then(response => response.text())
-      .then(data => {
-        console.log("dffdf",data)
-        this.setState({'tweets':data})
+    fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweets',)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
+        this.setState({'tweets':result.data})
       })
       .catch(err=>{
-      console.log(err)
+      console.error(err)
       })
   }
 
@@ -40,7 +39,7 @@ import RepeatIcon from "@material-ui/icons/Repeat";
               <p>{this.state.text}</p>
             </div>
           </div>
-          {/* <img src={this.state.img} alt="" /> */}
+          <img src={this.state.img} alt="" />
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />

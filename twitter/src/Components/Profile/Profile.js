@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Sidebar from '../Sidebar/Sidebar'
-import Widgets from '../Widgets/Widgets'
 import { Avatar, Button } from '@material-ui/core'
 import './Profile.css'
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";

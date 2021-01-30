@@ -14,22 +14,16 @@ class TweetBox extends React.Component {
 
     }
 
-    getTweet() {
+    sendTweet() {
         var role = new FormData()
-        role.append("username", this.state.username)
-        role.append("post", this.state.post)
+        role.append("email", localStorage.getItem('email'))
+        role.append("tweet", this.state.post)
         role.append("img", this.state.img)
         var option = {
             method: 'POST',
             body: role
         }
-
-        fetch('http://127.0.0.1:5000/tweets', option)
-            .then(response => response.json())
-            .then(data => {
-                console.log("fffffff", data)
-                this.setState({ data })
-            })
+        fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweets', option)
     }
 
     render() {
@@ -40,20 +34,18 @@ class TweetBox extends React.Component {
                         <Avatar src={this.state.img} />
                         <input
                             onChange={(e) => { this.setState({ post: [e.target.value] }) }}
-
                             placeholder="What's happining?"
                             type='text'
                             id='postTweet' />
                     </div>
-                    {/* <input
-                        onChange={e => setTweetImage(e.target.value)}
-                        value={tweetImage}
+                    <input
+                        onChange={(e) => { this.setState({ img: [e.target.value] }) }}
                         className='tweetBox__imageInput'
                         placeholder="Enter image URL"
-                        type='text' /> */}
+                        type='text' />
 
                     <Button
-                        onClick={this.getTweet}
+                        onClick={this.sendTweet}
                         type='submit' className='tweet__tweetButton'> Tweet </Button>
                 </form>
             </div>

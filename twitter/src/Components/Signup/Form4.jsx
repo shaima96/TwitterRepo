@@ -22,6 +22,7 @@ class FormFour extends React.Component {
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
+              alt="back"
               />
         </Link>
           <img

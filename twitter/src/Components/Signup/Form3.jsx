@@ -24,6 +24,7 @@ class FormThree extends React.Component {
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
+              alt="back"
               />
         </Link>
           <h4>Step 3 of 5</h4>
@@ -74,17 +75,18 @@ class FormThree extends React.Component {
             <br />
             <p>
               By signing up, you agree to the{" "}
-              <a href="https://twitter.com/en/tos#new" target="_blank">
+              <a href="https://twitter.com/en/tos#new" target="_blank" rel="noreferrer">
                 Terms of Service
               </a>{" "}
               and{" "}
-              <a href="https://twitter.com/en/privacy" target="_blank">
+              <a href="https://twitter.com/en/privacy" target="_blank" rel="noreferrer">
                 Privacy Policy
               </a>
               , including
               <a
                 href="https://help.twitter.com/en/rules-and-policies/twitter-cookies"
                 target="_blank"
+                rel="noreferrer"
               >
                 Cookie Use.
               </a>

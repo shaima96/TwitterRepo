@@ -73,7 +73,7 @@ class Signup extends React.Component {
               width="60px"
               height="60px"
             />
-            <Link to="/form2" style={{ textDecoration: "none" }} id="signupinformation" style={{visibility: "hidden"}}>
+            <Link to="/form2" style={{ textDecoration: "none", visibility: "hidden"}} id="signupinformation">
               <Button
                 type="submit"
                 className="button"
@@ -92,6 +92,7 @@ class Signup extends React.Component {
                 type="text"
                 name="username"
                 onChange={(e) => {
+                  this.checkuser(e);
                   this.props.username([
                     e.target.value
                   ])
