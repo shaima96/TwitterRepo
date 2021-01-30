@@ -13,9 +13,9 @@ import db
 app = Flask(__name__)
 
 # jwt
-# people = db.db.users
-# username_table = {u.username: u for u in people}
-# userid_table = {u.id: u for u in people}
+# people = db.db.users.find()
+# username_table = {u.username: u.username for u in people}
+# userid_table = {u.id: u._id for u in people}
 
 # def authenticate(username, password):
 #     user = username_table.get(username, None)
@@ -26,7 +26,7 @@ app = Flask(__name__)
 #     user_id = payload['identity']
 #     return userid_table.get(user_id, None)
 
-# app.config['SECRET_KEY'] = 'qwertyasdf'
+app.config['SECRET_KEY'] = 'qwertyasdf'
 # jwt = JWT(app, authenticate, identity)
 
 # enables CORS
