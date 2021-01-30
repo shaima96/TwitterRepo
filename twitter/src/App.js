@@ -12,19 +12,26 @@ import FormFour from './Components/Signup/Form4';
 import FormFive from './Components/Signup/Form5';
 import Explore from '../src/Components/HomePage/Explore'
 import Bookmarks from '../src/Components/HomePage/Bookmarks'
+import {React,Component} from "react";
 
 
 
 
 
 
-function App() {
+class App extends Component{
+  constructor(props) {
+    super(props)
+
+  }
+
+  render(){
   return (
     <div className="app">
       <Switch>
           <Route exact path='/'  component={Home} />
           <Route exact path='/homepage'  component={Homepage} />
-          <Route exact path='/profile'  component={Profilepage} />
+          <Route exact path='/profile'  render={(props) => <Profilepage {...props}  key={this.props.email}/>} />
           <Route exact path='/signup'  component={Signup} />
           <Route exact path='/login'  component={Login} />
           <Route exact path='/forget'  component={Forget} />
@@ -37,6 +44,7 @@ function App() {
         </Switch>
     </div>
   );
+}
 }
 
 export default App;

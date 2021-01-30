@@ -14,7 +14,8 @@ class TweetBox extends React.Component {
 
     }
 
-    sendTweet() {
+    sendTweet=(e)=> {
+        e.preventDefault()
         var role = new FormData()
         role.append("email", localStorage.getItem('email'))
         role.append("tweet", this.state.post)
@@ -24,6 +25,15 @@ class TweetBox extends React.Component {
             body: role
         }
         fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweets', option)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+                this.setState({})
+            })
+            .catch(err => {
+              console.error(err)
+            })
+        
     }
 
     render() {
@@ -38,11 +48,11 @@ class TweetBox extends React.Component {
                             type='text'
                             id='postTweet' />
                     </div>
-                     <input 
-                onChange={(e) => { this.setState({ img: [e.target.value] }) }}
-                className='tweetBox__imageInput'
-                 placeholder="Enter image URL" 
-                 type='text' /> 
+                    <input
+                        onChange={(e) => { this.setState({ img: [e.target.value] }) }}
+                        className='tweetBox__imageInput'
+                        placeholder="Enter image URL"
+                        type='text' />
 
                     <Button
                         onClick={this.sendTweet}
