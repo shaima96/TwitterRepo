@@ -96,10 +96,12 @@ def user():
 
 @app.route('/users', methods=['GET'])
 def users():
-        s=""
+        s=[]
         for user in db.db.users.find():
-            s+=str(user)+"\n"
-        return s
+            user['_id'] = str(user['_id'])
+            user['password']="secret"
+            s.append(user)
+        return {"data":s}
 
 @app.route('/tweets', methods=['GET','POST'])
 def tweets():
@@ -109,10 +111,11 @@ def tweets():
             user = users.find_one({'email' : request.form['email']})
             posts.insert({'username': user['username'], 'email': user['email'], 'avatar': user['avatar'], 'tweet': request.form['tweet'], 'img': request.form['img']})
             return "ok"
-        s=""
+        s=[]
         for post in db.db.posts.find():
-            s+=str(post)+"\n"
-        return s
+            post['_id'] = str(post['_id'])
+            s.append(post)
+        return {"data":s}
 
 # run the flask app
 if __name__ == '__main__':

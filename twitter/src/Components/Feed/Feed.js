@@ -25,9 +25,9 @@ function Feed() {
 
       <TweetBox />
 <FlipMove>
-        {posts.map((post) => (
+        {posts.map((post,i) => (
           <Post
-            key={post.text}
+            key={i}
             displayName={post.displayName}
             username={post.username}
             verified={post.verified}
