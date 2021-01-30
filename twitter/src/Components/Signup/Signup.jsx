@@ -19,13 +19,13 @@ class Signup extends React.Component {
   checkuser = (e) => {
     var row=new FormData()
     row.append('username', e.target.value)
-       fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/user", {
+       fetch("https://twittrer.herokuapp.com/user", {
           method: "POST",
           body: row, 
         })
           .then((response) => response.text())
           .then((result) => {
-            if(result === "no"){
+            if(result !== "no"){
               this.setState({ error2: "Username has already been taken." })}
             else{
               this.setState({ error2: "" });this.checker()}
@@ -37,13 +37,13 @@ class Signup extends React.Component {
     var row=new FormData()
     row.append('email', e.target.value)
     this.validateEmail(e.target.value)
-      ? fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/email", {
+      ? fetch("https://twittrer.herokuapp.com/email", {
           method: "POST",
           body: row, 
         })
           .then((response) => response.text())
           .then((result) => {
-            if(result === "no"){
+            if(result !== "no"){
               this.setState({ error: "Email has already been taken." })}
             else{
               this.setState({ error: "" });this.checker()}
