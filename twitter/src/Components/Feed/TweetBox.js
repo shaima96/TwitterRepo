@@ -30,15 +30,6 @@ class TweetBox extends React.Component {
                 console.log("fffffff", data)
                 this.setState({ data })
             })
-
-        // var object1 = { '_id': 1, 'user': 'hamdalla9@gmail.com', 'post': 'hello', 'img': 'fewfe', '_id': 1, 'user': 'hamdalla9@gmail.com', 'post': 'hello', 'img': 'fewfe' };
-
-        // const sliced = Object.keys(object1).slice(0, 4).reduce((result, key) => {
-        //     result[key] = object1[key];
-        //     return result;
-        // }, {});
-
-        // console.log("ss", sliced)
     }
 
     render() {
@@ -54,15 +45,15 @@ class TweetBox extends React.Component {
                             type='text'
                             id='postTweet' />
                     </div>
-                    {/* <input 
-                onChange={e => setTweetImage(e.target.value)}
-                value={tweetImage}
-                className='tweetBox__imageInput'
-                 placeholder="Enter image URL" 
-                 type='text' /> */}
+                    {/* <input
+                        onChange={e => setTweetImage(e.target.value)}
+                        value={tweetImage}
+                        className='tweetBox__imageInput'
+                        placeholder="Enter image URL"
+                        type='text' /> */}
 
                     <Button
-                        // onClick={this.getTweet}
+                        onClick={this.getTweet}
                         type='submit' className='tweet__tweetButton'> Tweet </Button>
                 </form>
             </div>
