@@ -5,6 +5,7 @@ import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import PublishIcon from '@material-ui/icons/Publish'
+import{ Link} from 'react-router-dom'
 
 class Post extends React.Component {
   constructor(props) {
@@ -24,15 +25,17 @@ class Post extends React.Component {
         <div className="post__body">
           <div className="post__header">
             <div className="post__headerText">
+              <Link to={`/profile/${this.props.email}`}  >
               <h3>
                 {this.props.username}
               </h3>
+              </Link>
             </div>
             <div className="post__headerDescription">
               <p>{this.props.text}</p>
             </div>
           </div>
-          <img src={this.props.img} alt="" />
+          <img id='image' src={this.props.img} alt=""  height='300px' />
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />

@@ -4,6 +4,8 @@ import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
 import FlipMove from 'react-flip-move'
+import './TweetBox.css'
+import { Avatar, Button } from '@material-ui/core'
 
 
 // import FlipMove from "react-flip-move";
@@ -13,18 +15,45 @@ class Feed extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tweets: []
+      tweets: [],
+      username: '',
+      post: '',
+      img: ''
     }
   }
   componentDidMount() {
     fetch('https://twittrer.herokuapp.com/tweets',)
       .then(response => response.json())
       .then(result => {
-        this.setState({ 'tweets': result.data })
+        this.setState({ 'tweets': result.data.reverse()})
       })
       .catch(err => {
         console.error(err)
       })
+
+  }
+
+  sendTweet = (e) => {
+    e.preventDefault()
+    var role = new FormData()
+    role.append("email", localStorage.getItem('email'))
+    role.append("tweet", document.getElementById('tweet').value)
+    role.append("img", document.getElementById('image').value)
+    var option = {
+      method: 'POST',
+      body: role
+    }
+    fetch('https://twittrer.herokuapp.com/tweets', option)
+      .then(response => response.text())
+      .then(result => {
+        console.log(result)
+        // this.setState({})
+        this.componentDidMount()
+      })
+      .catch(err => {
+        console.error(err)
+      })
+
   }
   render() {
     return (
@@ -33,19 +62,40 @@ class Feed extends React.Component {
           <h2>Home</h2>
         </div>
 
-        <TweetBox />
+        <div className='tweetBox'>
+          <form>
+            <div className='tweetBox__input'>
+              <Avatar src={this.state.img} />
+              <input
+                id='tweet' placeholder="What's happining?"
+                type='text'
+              />
+            </div>
+            <input
+              id='image'
+              className='tweetBox__imageInput'
+              placeholder="Enter image URL"
+              type='text' />
+
+            <Button
+              onClick={this.sendTweet}
+              type='submit' className='tweet__tweetButton'> Tweet </Button>
+          </form>
+        </div>
         <FlipMove>
-          {this.state.tweets.map((post, i) =>{ console.log(post)
-              return  (
-            <Post
-              key={i}
-              username={post.username}
-              email={post.email}
-              text={post.tweet}
-              avatar={post.avatar}
-              img={post.img}
-            />
-  )})}
+          {this.state.tweets.map((post, i) => {
+            console.log(post)
+            return (
+              <Post
+                key={i}
+                username={post.username}
+                email={post.email}
+                text={post.tweet}
+                avatar={post.avatar}
+                img={post.img}
+              />
+            )
+          })}
         </FlipMove>
 
       </div>

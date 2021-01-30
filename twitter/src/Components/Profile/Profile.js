@@ -11,26 +11,34 @@ class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            details: []
 
         };
     }
-    // componentDidMount(){
-    //     const email=match.params.email;
-    // }
 
-    //   getTweets = () => {
-    //     const requestOptions = {
+    componentDidMount() {
+        console.log("d",this.props)
+    
+    }
+
+    getTweets(){
+    // var role = new FormData()
+    //     role.append("email", localStorage.getItem('email'))
+    //     role.append("tweet", document.getElementById('tweet').value)
+    //     role.append("img", document.getElementById('image').value)
+    //     var option = {
     //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ email})
+    //         body: role
     //     }
-    //     fetch('http://127.0.0.1:5000/details', requestOptions)
+    //     fetch('https://twittrer.herokuapp.com/user',option)
     //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             setProfile(data)
+    //         .then(result => {
+    //             this.setState({ 'details': result.data })
     //         })
-    // }
+    //         .catch(err => {
+    //             console.error(err)
+    //         })
+    }
 
 
     render() {
@@ -40,8 +48,8 @@ class Profile extends Component {
             // --------------------------------header------------------------------------//
             <div className='profile'>
                 <div className='profile__header'>
-                    <h2 > Hiba Tamimi</h2>
-                    <h5> 5 Tweets </h5>
+                    <h2 > { }</h2>
+                    <h5> { } Tweets </h5>
                 </div>
                 <div>
 
@@ -51,9 +59,9 @@ class Profile extends Component {
                             <img className="img" src="https://www.steelvia.com/wp-content/uploads/2014/10/background-img-slider.jpg" />
 
                             <img className='profile__img' src="https://pbs.twimg.com/profile_images/1242623772437426176/C0WdBcXb_400x400.jpg" />
-                            <h2 > Hiba Tamimi</h2>
-                            <Button className='profile__followButton'> Follow </Button>
-                            <h5 className='username'>  @hiba-tamimi </h5>
+                            <h2 > { }</h2>
+                            {/* <Button className='profile__followButton'> Follow </Button> */}
+                            <h5 className='username'>  @{ }</h5>
                             <h3 className='bio'> Front end developer | Marketer  </h3>
 
                             <h3 className='followers'> <span className='number'> 500</span>   Following   </h3> <h3 className='followers' id='h3'>   <span className='number'> 200</span>  Followers   </h3>

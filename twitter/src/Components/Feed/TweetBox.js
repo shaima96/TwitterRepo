@@ -27,6 +27,8 @@ class TweetBox extends React.Component {
         fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweets', option)
             .then(response => response.text())
             .then(result => {
+                console.log(result)
+                this.setState({})
             })
             .catch(err => {
               console.error(err)
