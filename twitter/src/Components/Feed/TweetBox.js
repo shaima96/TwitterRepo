@@ -1,52 +1,73 @@
-import React, { Component , useState } from 'react'
+import React from 'react'
 import './TweetBox.css'
 import { Avatar, Button } from '@material-ui/core'
-import db from './data'
 
-function TweetBox (){
-const [tweetMessage ,  setTweetMessage] = useState('');
-const [tweetImage , setTweetImage] = useState('');
-const sendTweet = (e) => {
-    e.preventDefault();
 
-    db.collection("posts").add({
-        displayName: "Hiba Tamimi",
-        username: "hibatamimi",
-        verified: true,
-        text: tweetMessage,
-        image: tweetImage,
-        avatar:
-          "https://pbs.twimg.com/profile_images/1242623772437426176/C0WdBcXb_400x400.jpg",
-      });
-  
-      setTweetMessage("");
-      setTweetImage("");
-}
+class TweetBox extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            username: '',
+            post: '',
+            img: ''
+        }
 
-    return (
-        <div className='tweetBox'>
-            <form>
-                <div className='tweetBox__input'>
-                    <Avatar src="https://pbs.twimg.com/profile_images/1242623772437426176/C0WdBcXb_400x400.jpg" />
-                    <input 
-                    onChange={e =>   setTweetMessage(e.target.value)}
-                    value={tweetMessage}
-                    placeholder="What's happining?" 
-                    type='text' />
-                </div>
-                <input 
+    }
+
+    getTweet() {
+        var role = new FormData()
+        role.append("username", this.state.username)
+        role.append("post", this.state.post)
+        role.append("img", this.state.img)
+        var option = {
+            method: 'POST',
+            body: role
+        }
+
+        fetch('http://127.0.0.1:5000/tweets', option)
+            .then(response => response.json())
+            .then(data => {
+                console.log("fffffff", data)
+                this.setState({ data })
+            })
+
+        // var object1 = { '_id': 1, 'user': 'hamdalla9@gmail.com', 'post': 'hello', 'img': 'fewfe', '_id': 1, 'user': 'hamdalla9@gmail.com', 'post': 'hello', 'img': 'fewfe' };
+
+        // const sliced = Object.keys(object1).slice(0, 4).reduce((result, key) => {
+        //     result[key] = object1[key];
+        //     return result;
+        // }, {});
+
+        // console.log("ss", sliced)
+    }
+
+    render() {
+        return (
+            <div className='tweetBox'>
+                <form>
+                    <div className='tweetBox__input'>
+                        <Avatar src={this.state.img} />
+                        <input
+                            onChange={(e) => { this.setState({ post: [e.target.value] }) }}
+
+                            placeholder="What's happining?"
+                            type='text'
+                            id='postTweet' />
+                    </div>
+                    {/* <input 
                 onChange={e => setTweetImage(e.target.value)}
                 value={tweetImage}
                 className='tweetBox__imageInput'
                  placeholder="Enter image URL" 
-                 type='text' />
+                 type='text' /> */}
 
-                <Button 
-                onClick={sendTweet}
-                type ='submit'   className='tweet__tweetButton'> Tweet </Button>
-            </form>
-        </div>
-    )
+                    <Button
+                        // onClick={this.getTweet}
+                        type='submit' className='tweet__tweetButton'> Tweet </Button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default TweetBox

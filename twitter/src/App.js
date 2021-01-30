@@ -10,6 +10,8 @@ import FormTwo from './Components/Signup/form2';
 import FormThree from './Components/Signup/Form3';
 import FormFour from './Components/Signup/Form4';
 import FormFive from './Components/Signup/Form5';
+import Explore from '../src/Components/HomePage/Explore'
+import Bookmarks from '../src/Components/HomePage/Bookmarks'
 
 
 
@@ -30,6 +32,8 @@ function App() {
           <Route exact path='/form3'  component={FormThree} />
           <Route exact path='/form4'  component={FormFour} />
           <Route exact path='/form5'  component={FormFive} />
+          <Route exact path='/explore'  component={Explore} />
+          <Route exact path='/bookmarks'  component={Bookmarks} />
         </Switch>
     </div>
   );

@@ -92,7 +92,6 @@ class Signup extends React.Component {
                 type="text"
                 name="username"
                 onChange={(e) => {
-                  this.checkuser(e);
                   this.props.username([
                     e.target.value
                   ])

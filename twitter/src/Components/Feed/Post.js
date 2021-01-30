@@ -7,36 +7,44 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 
-const Post = forwardRef(
+class Post extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tweets: []
+    }
 
-  ({ displayName,
-    username,
-    verified,
-    text,
-    image,
-    avatar },
-    ref) => {
+  }
+  componentDidMount() {
+    fetch('http://127.0.0.1:5000/tweets',)
+      .then(response => response.text())
+      .then(data => {
+        console.log("dffdf",data)
+        this.setState({'tweets':data})
+      })
+      .catch(err=>{
+      console.log(err)
+      })
+  }
+
+  render() {
     return (
-      <div className="post" ref={ref}>
+      <div className="post" >
         <div className="post__avatar">
-          <Avatar src={avatar} />
+          <Avatar src={this.state.img} />
         </div>
         <div className="post__body">
           <div className="post__header">
             <div className="post__headerText">
               <h3>
-                {displayName}{" "}
-                <span className="post__headerSpecial">
-                  {verified && <VerifiedUserIcon className="post__badge" />} @
-                  {username}
-                </span>
+                {this.state.username}{" "}
               </h3>
             </div>
             <div className="post__headerDescription">
-              <p>{text}</p>
+              <p>{this.state.text}</p>
             </div>
           </div>
-          <img src={image} alt="" />
+          {/* <img src={this.state.img} alt="" /> */}
           <div className="post__footer">
             <ChatBubbleOutlineIcon fontSize="small" />
             <RepeatIcon fontSize="small" />
@@ -47,6 +55,6 @@ const Post = forwardRef(
       </div>
     );
   }
-);
+}
 
 export default Post;

@@ -27,18 +27,16 @@
     ```
     cd Backend/
     ```
-   - Create virtualenv
-   ```
-   python -m venv env
-   .\env\Scripts\activate
-   pip install -r requirements.txt
-   ```
+   - Install dependencies
+    ```
+    pip install -r requirements.txt
+    ```
    - Run the server:
     ```
     cd Backend/
-    python app.py runserver
+    python app.py
     ```
-
+    
 2. frontend
    - Go from root directory to client directory
    ```
@@ -49,7 +47,7 @@
    ```
    npm start
    ```
-
+   
 ## Teams
 - [Hamdallah](https://github.com/Hamdalla2) 
 - [Hiba](https://github.com/hibtmimi) 
