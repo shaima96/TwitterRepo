@@ -22,7 +22,7 @@ class FormFive extends React.Component {
           row.append("password",this.state.password)
           row.append("email",this.props.email2)
           row.append("dob",this.props.day2+" / "+this.props.month2+" / "+this.props.year2)
-        fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/signup", {
+        fetch("https://twittrer.herokuapp.com/signup", {
           method: "POST",          
           body: row,
         })
@@ -41,7 +41,7 @@ class FormFive extends React.Component {
         }
     }
     checkLength = (e) => {
-        if(e.target.value.length<8){this.setState({ error: "Please enter a valid email." })}
+        if(e.target.value.length<8){this.setState({ error: "Your password needs to be at least 8 characters. Please enter a longer one." })}
         else{this.setState({ error: "" });document.getElementById("signupbutton").style.visibility="visible"}
     }
 
