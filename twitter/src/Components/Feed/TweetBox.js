@@ -14,7 +14,8 @@ class TweetBox extends React.Component {
 
     }
 
-    sendTweet() {
+    sendTweet=(e)=> {
+        e.preventDefault()
         var role = new FormData()
         role.append("email", localStorage.getItem('email'))
         role.append("tweet", this.state.post)
@@ -24,6 +25,13 @@ class TweetBox extends React.Component {
             body: role
         }
         fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweets', option)
+            .then(response => response.text())
+            .then(result => {
+            })
+            .catch(err => {
+              console.error(err)
+            })
+        
     }
 
     render() {
