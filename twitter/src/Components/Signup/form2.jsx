@@ -22,6 +22,7 @@ class FormTwo extends React.Component {
               src="https://i.imgur.com/5ZC472g.png"
               width="40px"
               height="40px"
+              alt="back"
               />
         </Link>
           <img
@@ -55,6 +56,7 @@ class FormTwo extends React.Component {
               <a
                 href="https://help.twitter.com/en/managing-your-account/new-account-settings"
                 target="_blank"
+                rel="noreferrer"
               >
                 Help Center.
               </a>

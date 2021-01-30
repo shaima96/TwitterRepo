@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Sidebar from '../Sidebar/Sidebar'
-import Widgets from '../Widgets/Widgets'
 import { Avatar, Button } from '@material-ui/core'
 import './Profile.css'
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
@@ -32,9 +30,9 @@ class Profile extends Component {
                 {/* ---------------------profile box-----------------------*/}
                 <div className='profile__info'>
                     <form>
-                        <img className="img"  src="https://www.steelvia.com/wp-content/uploads/2014/10/background-img-slider.jpg" />
+                        <img className="img"  src="https://www.steelvia.com/wp-content/uploads/2014/10/background-img-slider.jpg" alt="backgroundslider"/>
 
-                        <img className='profile__img' src="https://pbs.twimg.com/profile_images/1242623772437426176/C0WdBcXb_400x400.jpg" />
+                        <img className='profile__img' src="https://pbs.twimg.com/profile_images/1242623772437426176/C0WdBcXb_400x400.jpg" alt="profile"/>
                         <h2 > Hiba Tamimi</h2>
                         <Button className='profile__followButton'> Follow </Button>
                         <h5 className='username'>  @hiba-tamimi </h5>

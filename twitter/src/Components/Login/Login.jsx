@@ -31,8 +31,8 @@ class Login extends React.Component {
         })
             .then((response) => response.text())
             .then((result) => {
-                if(result!="Invalid username or password"){
-                localStorage.setItem( 'user',result )
+                if(result!=="Invalid username or password"){
+                localStorage.setItem("email",result)
                 this.setState({redirect:true})}
                 else{this.setState({error:"Invalid username or password"})}
             })
