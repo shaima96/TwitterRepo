@@ -91,6 +91,7 @@ def email():
         if existing_user is None:
             return "no"
         existing_user['_id'] = str(existing_user['_id'])
+        existing_user['password']="secret"
         return {"data":existing_user }
 
 @app.route('/user', methods=['POST'])
@@ -101,6 +102,7 @@ def user():
         if existing_user is None:
             return "no"
         existing_user['_id'] = str(existing_user['_id'])
+        existing_user['password']="secret"
         return {"data":existing_user }
 
 @app.route('/tweet', methods=['POST'])

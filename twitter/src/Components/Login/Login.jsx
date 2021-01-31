@@ -29,13 +29,14 @@ class Login extends React.Component {
             method: "POST",
             body: role
         })
-            .then((response) => response.text())
+            .then((response) => response.json())
             .then((result) => {
                 if(result.data){
                 localStorage.setItem("email",result.data)
                 this.setState({redirect:true})}
                 else{this.setState({error:"Invalid username or password"})}
             })
+            .catch(err => console.error(err))
     }
     signIn = (e) => {
         e.preventDefault()

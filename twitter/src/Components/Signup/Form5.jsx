@@ -26,7 +26,7 @@ class FormFive extends React.Component {
           method: "POST",          
           body: row,
         })
-          .then((response) => response.text())
+          .then((response) => response.json())
           .then((result) => {
             if(result.data){
               this.setState({redirect:true})}
