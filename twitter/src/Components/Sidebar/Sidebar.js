@@ -12,8 +12,41 @@ import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Button } from "@material-ui/core";
 import { NavLink } from 'react-router-dom'
+import { connect } from "react-redux";
+import { details, tweets } from "../../redux/actions";
+
+
 
 class Sidebar extends Component {
+
+  visit=()=> {
+    var role = new FormData()
+    role.append("email", localStorage.getItem('email'))
+    const option = {
+      method: 'POST',
+      body: role
+    };
+    fetch('https://twittrer.herokuapp.com/email', option)
+      .then(response => response.json())
+      .then(result => {
+        console.log("dddd", result)
+        this.props.details(result.data)
+
+      })
+      .catch(err => {
+        console.error(err)
+      })
+
+    fetch('https://twittrer.herokuapp.com/tweet', option)
+      .then(response => response.json())
+      .then(result => {
+        console.log("dddd", result)
+        this.props.tweets(result.data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
 
   render() {
     return (
@@ -26,7 +59,7 @@ class Sidebar extends Component {
         <SidebarOption Icon={MailOutlineIcon} text="Messages" />
         <NavLink className='link' to='/bookmarks'>  <SidebarOption Icon={BookmarkBorderIcon} text="Bookmarks" /></NavLink>
         <SidebarOption Icon={ListAltIcon} text="Lists" />
-        <NavLink className='link' to='/profile'> <SidebarOption Icon={PermIdentityIcon} text="Profile" />  </NavLink>
+        <NavLink className='link' to='/profile' onClick={this.visit}> <SidebarOption Icon={PermIdentityIcon} text="Profile" />  </NavLink>
 
         <SidebarOption Icon={MoreHorizIcon} text="More" />
 
@@ -37,4 +70,21 @@ class Sidebar extends Component {
     );
   }
 }
-export default Sidebar;
+
+const mapStateToProps = (state) => {
+  return {
+
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    details: (x) => {
+      dispatch(details(x));
+    },
+    tweets: (x) => {
+      dispatch(tweets(x));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

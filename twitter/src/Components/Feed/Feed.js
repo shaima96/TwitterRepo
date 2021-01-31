@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import db from './data'
 import TweetBox from "./TweetBox";
+import FlipMove from 'react-flip-move'
 import Post from "./Post";
 import "./Feed.css";
-import FlipMove from 'react-flip-move'
 import './TweetBox.css'
 import { Avatar, Button } from '@material-ui/core'
 
@@ -93,6 +93,11 @@ class Feed extends React.Component {
                 text={post.tweet}
                 avatar={post.avatar}
                 img={post.img}
+                likes={post.likes}
+                comments={post.comments}
+                retweets={post.retweets}
+                date={post.date}
+                time={post.time}
               />
             )
           })}
