@@ -25,7 +25,7 @@ class Login extends React.Component {
         var role = new FormData()
         role.append("username", this.state.email)
         role.append("password", this.state.password)
-        fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/signin", {
+        fetch("https://twittrer.herokuapp.com/signin", {
             method: "POST",
             body: role
         })
