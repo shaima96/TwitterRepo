@@ -29,4 +29,18 @@ export const year = (x) => {
     type: "year",
     year2: x,
   };
+  
+ 
+};
+export const details = (x) => {
+  return {
+    type: "details",
+    details2: x,
+  };
+};
+export const tweets = (x) => {
+  return {
+    type: "tweets",
+    tweets2: x,
+  };
 };
