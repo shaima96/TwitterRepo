@@ -29,14 +29,20 @@ class Login extends React.Component {
             method: "POST",
             body: role
         })
-            .then((response) => response.text())
+            .then((response) => response.json())
             .then((result) => {
-                if(result.data){
-                localStorage.setItem("email",result.data)
-                this.setState({redirect:true})}
-                else{this.setState({error:"Invalid username or password"})}
+                console.log(result)
+                if (result.data) {
+                    localStorage.setItem("email", result.data)
+                    this.setState({ redirect: true })
+                }
+                else { this.setState({ error: "Invalid username or password" }) }
             })
-    }
+            .catch((err) => {
+                console.log(err)
+            })
+        }
+    
     signIn = (e) => {
         e.preventDefault()
         this.signInCheck()
@@ -45,58 +51,58 @@ class Login extends React.Component {
         const { email, password } = this.state
         if (this.state.redirect) {
             return <Redirect to="/homepage" />
-          } else {
-        return (
-            <div className='container_login'>
-                <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="50px" height="50px" />
-                <br />
-                <h1>Log in to Twitter</h1>
-                <br />
+        } else {
+            return (
+                <div className='container_login'>
+                    <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="50px" height="50px" />
+                    <br />
+                    <h1>Log in to Twitter</h1>
+                    <br />
 
-                <form className='login' onSubmit={this.signIn} >
-                    <TextField className='Input' 
-                        placeholder='Phone,Email,or username'
-                        label='Phone,Email or username'
-                        type='text'
-                        name='email'
-                        value={email}
-                        onChange={this.handleChange}
-                        required
-                        variant="outlined"
-                        error={!!this.state.error}
-                        helperText={this.state.error}
-                    />
-                    <br />
-                    <br />
-                    <TextField className='Input'
-                        placeholder='Password'
-                        type='password'
-                        name='password'
-                        value={password}
-                        onChange={this.handleChange}
-                        required
-                        variant="outlined"
-                        label='Password'
-                        error={!!this.state.error}
-                        helperText={this.state.error}
-                    />
-                    <br />
-                    <br />
-                    <Button type='submit' className='button' > Log in </Button>
-                    <br />
-                    <Link to='/forget' style={{ textDecoration: 'none' }}>
-                        <h4 id='password'>Forgot password?</h4>
-                    </Link>
-                    <Link to='/signup' style={{ textDecoration: 'none' }}>
-                        <h4 id='signup'>Sign up for Twitter</h4>
-                    </Link>
-                </form>
+                    <form className='login' onSubmit={this.signIn} >
+                        <TextField className='Input'
+                            placeholder='Phone,Email,or username'
+                            label='Phone,Email or username'
+                            type='text'
+                            name='email'
+                            value={email}
+                            onChange={this.handleChange}
+                            required
+                            variant="outlined"
+                            error={!!this.state.error}
+                            helperText={this.state.error}
+                        />
+                        <br />
+                        <br />
+                        <TextField className='Input'
+                            placeholder='Password'
+                            type='password'
+                            name='password'
+                            value={password}
+                            onChange={this.handleChange}
+                            required
+                            variant="outlined"
+                            label='Password'
+                            error={!!this.state.error}
+                            helperText={this.state.error}
+                        />
+                        <br />
+                        <br />
+                        <Button type='submit' className='button' > Log in </Button>
+                        <br />
+                        <Link to='/forget' style={{ textDecoration: 'none' }}>
+                            <h4 id='password'>Forgot password?</h4>
+                        </Link>
+                        <Link to='/signup' style={{ textDecoration: 'none' }}>
+                            <h4 id='signup'>Sign up for Twitter</h4>
+                        </Link>
+                    </form>
 
-            </div>
+                </div>
 
-        )
+            )
+        }
     }
-}
 }
 
 export default Login;
