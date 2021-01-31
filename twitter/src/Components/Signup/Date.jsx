@@ -1,33 +1,31 @@
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import { day,month,year } from "../../redux/actions";
-import Select from '@material-ui/core/Select';
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import { day, month, year } from "../../redux/actions";
+import Select from "@material-ui/core/Select";
 import { connect } from "react-redux";
-import React from 'react';
-import './Signup.css';
-
+import React from "react";
+import "./Signup.css";
 
 class Date extends React.Component {
   constructor(props) {
-      super(props)
-      this.state = {
-
-      }
+    super(props);
+    this.state = {};
   }
 
-  render(){
-    
+  render() {
     return (
-      <div className='container_date'>
-        <FormControl variant="outlined" id='day_form' className="formControl">
+      <div className="container_date">
+        <FormControl variant="outlined" id="day_form" className="formControl">
           <InputLabel htmlFor="outlined-month-native-simple">Month </InputLabel>
           <Select
             native
-            onChange={(e)=>{this.props.month([e.target.options[e.target.selectedIndex].text])}}
+            onChange={(e) => {
+              this.props.month([e.target.options[e.target.selectedIndex].text]);
+            }}
             label="month"
             inputProps={{
-              name: 'month',
-              id: 'outlined-month-native-simple',
+              name: "month",
+              id: "outlined-month-native-simple",
             }}
           >
             <option aria-label="None" value="" />
@@ -45,16 +43,18 @@ class Date extends React.Component {
             <option value={12}>December</option>
           </Select>
         </FormControl>
-        
+
         <FormControl variant="outlined" className="formControl1">
           <InputLabel htmlFor="outlined-day-native-simple">Day </InputLabel>
           <Select
             native
-            onChange={(e)=>{this.props.day([e.target.options[e.target.selectedIndex].text])}}
+            onChange={(e) => {
+              this.props.day([e.target.options[e.target.selectedIndex].text]);
+            }}
             label="day"
             inputProps={{
-              name: 'day ',
-              id: 'outlined-day-native-simple',
+              name: "day ",
+              id: "outlined-day-native-simple",
             }}
           >
             <option aria-label="None" value="" />
@@ -80,7 +80,7 @@ class Date extends React.Component {
             <option value={20}>20</option>
             <option value={21}>21</option>
             <option value={22}>22</option>
-            <option value={23}>23</option>         
+            <option value={23}>23</option>
             <option value={24}>24</option>
             <option value={25}>25</option>
             <option value={26}>26</option>
@@ -89,19 +89,20 @@ class Date extends React.Component {
             <option value={29}>29</option>
             <option value={30}>30</option>
             <option value={31}>31</option>
-
           </Select>
         </FormControl>
-  
+
         <FormControl variant="outlined" className="formControl">
           <InputLabel htmlFor="outlined-year-native-simple">Year </InputLabel>
           <Select
             native
-            onChange={(e)=>{this.props.year([e.target.options[e.target.selectedIndex].text])}}
+            onChange={(e) => {
+              this.props.year([e.target.options[e.target.selectedIndex].text]);
+            }}
             label="year"
             inputProps={{
-              name: 'year',
-              id: 'outlined-year-native-simple',
+              name: "year",
+              id: "outlined-year-native-simple",
             }}
           >
             <option aria-label="None" value="" />
@@ -184,7 +185,6 @@ class Date extends React.Component {
             <option value={77}>1945</option>
             <option value={78}>1944</option>
             <option value={79}>1943</option>
-
           </Select>
         </FormControl>
       </div>
@@ -202,9 +202,15 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    day: (x) => {dispatch(day(x))},
-    month: (x) => {dispatch(month(x))},
-    year: (x) => {dispatch(year(x))},
+    day: (x) => {
+      dispatch(day(x));
+    },
+    month: (x) => {
+      dispatch(month(x));
+    },
+    year: (x) => {
+      dispatch(year(x));
+    },
   };
 };
 
