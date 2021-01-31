@@ -23,7 +23,7 @@ class Profile extends Component {
             method: 'POST',
             body: role
         };
-        fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/user', option)
+        fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/email', option)
             .then(response => response.json())
             .then(result => {
                 console.log("dddd",result)

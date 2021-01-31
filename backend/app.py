@@ -57,7 +57,7 @@ def signin():
         if signin_user:
             if bcrypt.hashpw(request.form['password'].encode('utf-8'), signin_user['password']) == signin_user['password']:
                 session['email'] = signin_user['email']
-                return signin_user['email']
+                return {'data' : signin_user['email']}
         return 'Invalid username or password'
     return render_template('signin.html')
 
@@ -72,8 +72,8 @@ def signup():
         existing_user = users.find_one({'email' : request.form['email']})
         if existing_user is None:
             hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'), bcrypt.gensalt())
-            users.insert({'username' : request.form['username'], 'password' : hashpass, 'email' : request.form['email'], 'avatar': 'https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/egg-3442-e1f6463624338504cd021bf23aef8441@1x.jpg', 'cover': '', 'phone': '', 'dob' : request.form['dob'], 'tweets': 0, 'following': 0, 'followers': 0, 'bio': 'Thank you for visiting my profile'})
-            return redirect(url_for('signin'))
+            users.insert({'username' : request.form['username'], 'password' : hashpass, 'email' : request.form['email'], 'avatar': 'https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/egg-3442-e1f6463624338504cd021bf23aef8441@1x.jpg', 'cover': '', 'phone': '', 'dob' : request.form['dob'], 'tweets': 0, 'following': 0, 'followers': 0, 'bio': 'Thank you for visiting my profile', 'saves': [], 'retweets': [], 'likes': []})
+            return {'data' : 'created'}
         return 'Username taken!'
     return render_template('signup.html')
 
@@ -90,7 +90,8 @@ def email():
         existing_user = users.find_one({'email' : request.form['email']})
         if existing_user is None:
             return "no"
-        return existing_user
+        existing_user['_id'] = str(existing_user['_id'])
+        return {"data":existing_user }
 
 @app.route('/user', methods=['POST'])
 @cross_origin()
@@ -99,7 +100,8 @@ def user():
         existing_user = users.find_one({'username' : request.form['username']})
         if existing_user is None:
             return "no"
-        return existing_user 
+        existing_user['_id'] = str(existing_user['_id'])
+        return {"data":existing_user }
 
 @app.route('/tweet', methods=['POST'])
 @cross_origin()
@@ -132,13 +134,93 @@ def tweets():
             users = db.db.users
             posts = db.db.posts
             user = users.find_one({'email' : request.form['email']})
-            posts.insert({'username': user['username'], 'email': user['email'], 'avatar': user['avatar'], 'tweet': request.form['tweet'], 'img': request.form['img'], 'time': datetime.datetime.now().strftime("%X"), 'date': datetime.datetime.now().strftime("%x")})
+            posts.insert({'username': user['username'], 'email': user['email'], 'avatar': user['avatar'], 'tweet': request.form['tweet'], 'img': request.form['img'], 'time': datetime.datetime.now().strftime("%X"), 'date': datetime.datetime.now().strftime("%x"),'likes': 0, 'retweets': 0, 'comments': []})
             return "ok"
         s=[]
         for post in db.db.posts.find():
             post['_id'] = str(post['_id'])
             s.append(post)
         return {"data":s}
+
+@app.route('/like', methods=['POST'])
+@cross_origin()
+def like():
+        posts = db.db.posts
+        post = posts.find_one({'_id' : request.form['id']})
+        posts.update_one({'_id' : request.form['id']},{'likes': post['like']+1})
+        users = db.db.users
+        users.update_one({'email' : request.form['email']},{"$push": {'likes': post['_id']}})
+        return "ok"
+        
+@app.route('/unlike', methods=['POST'])
+@cross_origin()
+def unlike():
+        posts = db.db.posts
+        post = posts.find_one({'_id' : request.form['id']})
+        posts.update_one({'_id' : request.form['id']},{'likes': post['like']-1})
+        users = db.db.users
+        users.update_one({'email' : request.form['email']},{"$pull": {'likes': post['_id']}})
+        return "ok"
+        
+@app.route('/retweet', methods=['POST'])
+@cross_origin()
+def retweet():
+        posts = db.db.posts
+        post = posts.find_one({'_id' : request.form['id']})
+        posts.update_one({'_id' : request.form['id']},{'retweets': post['retweets']+1})
+        users = db.db.users
+        users.update_one({'email' : request.form['email']},{"$push": {'retweets': post['_id']}})
+        return "ok"
+        
+@app.route('/unretweet', methods=['POST'])
+@cross_origin()
+def unretweet():
+        posts = db.db.posts
+        post = posts.find_one({'_id' : request.form['id']})
+        posts.update_one({'_id' : request.form['id']},{'retweets': post['retweets']-1})
+        users = db.db.users
+        users.update_one({'email' : request.form['email']},{"$pull": {'retweets': post['_id']}})
+        return "ok"
+
+@app.route('/save', methods=['POST'])
+@cross_origin()
+def save():
+        posts = db.db.posts
+        post = posts.find_one({'_id' : request.form['id']})
+        posts.update_one({'_id' : request.form['id']},{'saves': post['saves']+1})
+        users = db.db.users
+        users.update_one({'email' : request.form['email']},{"$push": {'saves': post['_id']}})
+        return "ok"
+        
+@app.route('/unsave', methods=['POST'])
+@cross_origin()
+def unsave():
+        posts = db.db.posts
+        post = posts.find_one({'_id' : request.form['id']})
+        posts.update_one({'_id' : request.form['id']},{'saves': post['saves']-1})
+        users = db.db.users
+        users.update_one({'email' : request.form['email']},{"$pull": {'saves': post['_id']}})
+        return "ok"
+
+@app.route('/follow', methods=['POST'])
+@cross_origin()
+def follow():
+        users = db.db.users
+        user = users.find_one({'email' : request.form['email']})
+        users.update_one({'email' : request.form['email']},{"following": user['following']+1})
+        user2 = users.find_one({'username' : request.form['username']})
+        users.update_one({'username' : request.form['username']},{"followers": user['followers']+1})
+        return "ok"
+        
+@app.route('/unfollow', methods=['POST'])
+@cross_origin()
+def unfollow():
+        users = db.db.users
+        user = users.find_one({'email' : request.form['email']})
+        users.update_one({'email' : request.form['email']},{"following": user['following']-1})
+        user2 = users.find_one({'username' : request.form['username']})
+        users.update_one({'username' : request.form['username']},{"followers": user['followers']-1})
+        return "ok"
 
 # run the flask app
 if __name__ == '__main__':

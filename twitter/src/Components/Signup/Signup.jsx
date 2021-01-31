@@ -25,10 +25,10 @@ class Signup extends React.Component {
         })
           .then((response) => response.text())
           .then((result) => {
-            if(result !== "no"){
-              this.setState({ error2: "Username has already been taken." })}
-            else{
+            if(result.data){
               this.setState({ error2: "" });this.checker()}
+              else{
+              this.setState({ error2: "Username has already been taken." })}
           })
           .catch((error) => console.error(error))
   };
@@ -43,10 +43,10 @@ class Signup extends React.Component {
         })
           .then((response) => response.text())
           .then((result) => {
-            if(result !== "no"){
-              this.setState({ error: "Email has already been taken." })}
-            else{
+            if(result.data){
               this.setState({ error: "" });this.checker()}
+              else{
+              this.setState({ error: "Email has already been taken." })}
           })
           .catch((error) => console.error(error))
       : this.setState({ error: "Please enter a valid email." });
