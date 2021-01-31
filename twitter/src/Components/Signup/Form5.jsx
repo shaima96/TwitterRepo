@@ -28,7 +28,8 @@ class FormFive extends React.Component {
         })
           .then((response) => response.text())
           .then((result) => {
-              this.setState({redirect:true})
+            if(result.data){
+              this.setState({redirect:true})}
         })
     }
 
