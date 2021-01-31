@@ -25,14 +25,14 @@ class Login extends React.Component {
         var role = new FormData()
         role.append("username", this.state.email)
         role.append("password", this.state.password)
-        fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/signin", {
+        fetch("https://twittrer.herokuapp.com/signin", {
             method: "POST",
             body: role
         })
             .then((response) => response.text())
             .then((result) => {
-                if(result!=="Invalid username or password"){
-                localStorage.setItem("email",result)
+                if(result.data){
+                localStorage.setItem("email",result.data)
                 this.setState({redirect:true})}
                 else{this.setState({error:"Invalid username or password"})}
             })
