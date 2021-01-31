@@ -12,13 +12,9 @@ import FormFour from "./Components/Signup/Form4";
 import FormFive from "./Components/Signup/Form5";
 import Explore from "../src/Components/HomePage/Explore";
 import Bookmarks from "../src/Components/HomePage/Bookmarks";
-import { React, Component } from "react";
+import React, {Component } from "react";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="app">

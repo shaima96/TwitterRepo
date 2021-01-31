@@ -229,22 +229,11 @@ def unfollow():
 def comment():
         posts = db.db.posts
         post = posts.find_one({'_id' : request.form['id']})
-        posts.update_one({'_id' : request.form['id']},{'comments': post['comments']+1})
         users = db.db.users
         user = users.find_one({'email' : request.form['email']})
-        users.update_one({'email' : request.form['email']},{"$push": {'comments': {'comment':request.form['comment'],'email' : request.form['email'],'username' : user['username'], 'time': datetime.datetime.now().strftime("%X"), 'date': datetime.datetime.now().strftime("%x")}}})
+        posts.update_one({'_id' : request.form['id']},{"$push": {'replies': {'comment':request.form['comment'],'avatar': user['avatar'], 'email' : request.form['email'],'username' : user['username'], 'time': datetime.datetime.now().strftime("%X"), 'date': datetime.datetime.now().strftime("%x")}}})
         return "ok"
-        
-@app.route('/uncomment', methods=['POST'])
-@cross_origin()
-def uncomment():
-        posts = db.db.posts
-        post = posts.find_one({'_id' : request.form['id']})
-        posts.update_one({'_id' : request.form['id']},{'comments': post['comments']-1})
-        user = db.db.users
-        users.update_one({'email' : request.form['email']},{"$pull": {'comments': {'email' : user['email'], 'time': request.form['time']} }})
-        return "ok"
-        
+
 # run the flask app
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=environ.get("PORT", 5000))

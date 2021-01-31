@@ -5,6 +5,8 @@ const initState = {
   day2: "",
   month2: "",
   year2: "",
+  details2: "",
+  tweets2: "",
 };
 
 // Edits the Redux variables
@@ -20,6 +22,10 @@ var rootReducer = (state = initState, action) => {
       return { ...state, month2: action.month2 };
     case "year":
       return { ...state, year2: action.year2 };
+    case "details":
+      return { ...state, details2: action.details2 };
+    case "tweets":
+      return { ...state, tweets2: action.tweets2 };
     default:
       return state;
   }
