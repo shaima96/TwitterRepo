@@ -44,3 +44,13 @@
   .post__avatar {
     padding: 20px;
   }
+
+  .greenicon:hover {
+    color:rgb(124, 223, 124);
+  }
+  .pinkicon:hover {
+    color:rgb(223, 89, 134);
+  }
+  .blueicon:hover {
+    color:rgb(55, 21, 247);
+  }
