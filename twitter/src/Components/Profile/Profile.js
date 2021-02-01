@@ -11,9 +11,55 @@ class Profile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
-
+            follow: true,
+            unFollow: true
         };
+    }
+
+
+    // checkFollow = (profile) => {
+    //     profile.forEach((s) => {
+    //         if () {
+    //        this.setState({follow:false})
+
+    //         }
+    //     })
+    // }
+
+    getTweets = () => {
+        var role = new FormData()
+        role.append("username", this.state.username)
+
+        const option = {
+            method: 'POST',
+            body: role
+        }
+        fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/user', option)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                // checkFollow(data)
+            })
+    }
+
+    follow = () => {
+
+        fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/follow')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                this.setState({ follow: false })
+            })
+
+    }
+    unFollow = () => {
+        fetch('https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/unfollow')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                this.setState({ unfollow: false })
+
+            })
     }
 
 
@@ -36,7 +82,10 @@ class Profile extends Component {
                             <img className="img" src={this.props.details2?.cover} />
 
                             <img className='profile__img' src={this.props.details2?.avatar} />
-                            <h2 > { }</h2>
+                            {
+                                this.state.follow ? <button onClick={this.follow} className='profile__followButton'>Follow</button> :
+                                    <button  onClick={this.unFollow} className='profile__followButton'>Unfollow</button>
+                            }
                             {/* <Button className='profile__followButton'> Follow </Button> */}
                             <h5 className='username'>  @{this.props.details2?.username}</h5>
                             <h3 className='bio'> {this.props.details2?.bio}</h3>
