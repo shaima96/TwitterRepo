@@ -6,7 +6,7 @@ const initState = {
   month2: "",
   year2: "",
   details2: "",
-  tweets2: ""
+  tweets2: "",
 };
 
 // Edits the Redux variables

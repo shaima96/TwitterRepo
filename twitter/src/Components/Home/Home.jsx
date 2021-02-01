@@ -1,112 +1,112 @@
-import { Link } from 'react-router-dom'
-import React from 'react';
-import './Home.css'
-
-
+import { Link } from "react-router-dom";
+import React from "react";
+import "./Home.css";
+import { Redirect } from "react-router-dom";
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-
-        }
-
-    }
-
-    render() {
-        return (
-            <div className="container">
-                <div className="left">
-                    <ul>
-                        <li className='follow'>
-                            Follow your interests.
-                        </li>
-                        <li className='fas fa-users-friends icon'>
-                            Hear what people are talking about.
-                        </li>
-                        <li className='join'>
-                            Join the conversation.
-                        </li>
-                    </ul>
-                </div>
-                <div className="right">
-                    <div className='card'>
-                        <div className='image'>
-                            <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" alt="Bird" width="70px" height="70px" />
-                        </div>
-                        <h1>See what’s happening in</h1>
-                        <h1 style={{marginTop:"-15px",marginBottom:"70px"}}>the world right now</h1>
-                        <h4>Join Twitter today.</h4>
-                        <Link  to='/signup' style={{ textDecoration: 'none' }}>
-                        <button className="btn">Sign Up</button>
-                        </Link>
-                        <Link  to='/login' style={{ textDecoration: 'none' }}>
-                        <button className="btn1">Log in</button>
-                        </Link>
-                    </div>
-                </div>
-                <div className="bottom">
-                    <ul>
-                        <li>
-                            <a href='https://about.twitter.com/'>About</a>
-                        </li>
-                        <li>
-                            <a href='https://help.twitter.com/'>Help Center</a>
-                        </li>
-                        <li>
-                            <a href='https://twitter.com/tos'>Terms of Service</a>
-                        </li>
-                        <li>
-                            <a href='https://twitter.com/privacy'>Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href='https://support.twitter.com/articles/20170514'>Cookie Policy</a>
-                        </li>
-                        <li>
-                            <a href='https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html'>Ads info</a>
-                        </li>
-                        <li>
-                            <a href='https://blog.twitter.com/'>Blog</a>
-                        </li>
-                        <li>
-                            <a href='https://status.twitterstat.us/'>Status</a>
-                        </li>
-                        <li>
-                            <a href='https://careers.twitter.com/'>Careers</a>
-                        </li>
-                        <li>
-                            <a href='https://about.twitter.com/press/brand-assets'>Brand Resources</a>
-                        </li>
-                        <li>
-                            <a href='https://ads.twitter.com/?ref=gl-tw-tw-twitter-advertise'>Advertising</a>
-                        </li>
-                        <li>
-                            <a href='https://marketing.twitter.com/'>Marketing</a>
-                        </li>
-                        <li>
-                            <a href='https://business.twitter.com/'>Twitter for Business</a>
-                        </li>
-                        <li>
-                            <a href='https://developer.twitter.com/'>Developers</a>
-                        </li>
-                        <li>
-                            <a href='https://twitter.com/i/directory/profiles'>Directory</a>
-                        </li>
-                        <li>
-                            <a href='https://twitter.com/settings'>Settings</a>
-                        </li>
-                        <li>
-                            © 2021 Twitter, Inc.
-                        </li>
-
-                    </ul>
-
-                </div>
-
+  render() {
+    if (localStorage.getItem("email")) {
+      return <Redirect to="/homepage" />;
+    } else {
+      return (
+        <div className="container">
+          <div className="left">
+            <ul>
+              <li className="follow">Follow your interests.</li>
+              <li className="fas fa-users-friends icon">
+                Hear what people are talking about.
+              </li>
+              <li className="join">Join the conversation.</li>
+            </ul>
+          </div>
+          <div className="right">
+            <div className="card">
+              <div className="image">
+                <img
+                  src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
+                  alt="Bird"
+                  width="70px"
+                  height="70px"
+                />
+              </div>
+              <h1>See what’s happening in</h1>
+              <h1 style={{ marginTop: "-15px", marginBottom: "70px" }}>
+                the world right now
+              </h1>
+              <h4>Join Twitter today.</h4>
+              <Link to="/signup" style={{ textDecoration: "none" }}>
+                <button className="btn">Sign Up</button>
+              </Link>
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                <button className="btn1">Log in</button>
+              </Link>
             </div>
-        );
+          </div>
+          <div className="bottom">
+            <ul>
+              <li>
+                <a href="https://about.twitter.com/">About</a>
+              </li>
+              <li>
+                <a href="https://help.twitter.com/">Help Center</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/tos">Terms of Service</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/privacy">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="https://support.twitter.com/articles/20170514">
+                  Cookie Policy
+                </a>
+              </li>
+              <li>
+                <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html">
+                  Ads info
+                </a>
+              </li>
+              <li>
+                <a href="https://blog.twitter.com/">Blog</a>
+              </li>
+              <li>
+                <a href="https://status.twitterstat.us/">Status</a>
+              </li>
+              <li>
+                <a href="https://careers.twitter.com/">Careers</a>
+              </li>
+              <li>
+                <a href="https://about.twitter.com/press/brand-assets">
+                  Brand Resources
+                </a>
+              </li>
+              <li>
+                <a href="https://ads.twitter.com/?ref=gl-tw-tw-twitter-advertise">
+                  Advertising
+                </a>
+              </li>
+              <li>
+                <a href="https://marketing.twitter.com/">Marketing</a>
+              </li>
+              <li>
+                <a href="https://business.twitter.com/">Twitter for Business</a>
+              </li>
+              <li>
+                <a href="https://developer.twitter.com/">Developers</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/i/directory/profiles">Directory</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/settings">Settings</a>
+              </li>
+              <li>© 2021 Twitter, Inc.</li>
+            </ul>
+          </div>
+        </div>
+      );
     }
+  }
 }
 
-
-export default Home
+export default Home;

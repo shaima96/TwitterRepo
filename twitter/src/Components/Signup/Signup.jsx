@@ -1,6 +1,6 @@
 import { Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { username,email } from "../../redux/actions";
+import { username, email } from "../../redux/actions";
 import { connect } from "react-redux";
 import React from "react";
 import Date from "./Date";
@@ -17,52 +17,63 @@ class Signup extends React.Component {
   }
 
   checkuser = (e) => {
-    var row=new FormData()
-    row.append('username', e.target.value)
-       fetch("https://twittrer.herokuapp.com/user", {
-          method: "POST",
-          body: row, 
-        })
-          .then((response) => response.text())
-          .then((result) => {
-            if(result.data){
-              this.setState({ error2: "" });this.checker()}
-              else{
-              this.setState({ error2: "Username has already been taken." })}
-          })
-          .catch((error) => console.error(error))
+    var row = new FormData();
+    row.append("username", e.target.value);
+    fetch("https://twittrer.herokuapp.com/user", {
+      method: "POST",
+      body: row,
+    })
+      .then((response) => response.text())
+      .then((result) => {
+        if (result==='no') {
+          this.setState({ error2: "" });
+          this.checker();
+        } else {
+          this.setState({ error2: "Username has already been taken." });
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
   checkemail = (e) => {
-    var row=new FormData()
-    row.append('email', e.target.value)
+    var row = new FormData();
+    row.append("email", e.target.value);
     this.validateEmail(e.target.value)
       ? fetch("https://twittrer.herokuapp.com/email", {
           method: "POST",
-          body: row, 
+          body: row,
         })
           .then((response) => response.text())
           .then((result) => {
-            if(result.data){
-              this.setState({ error: "" });this.checker()}
-              else{
-              this.setState({ error: "Email has already been taken." })}
+            if (result==='no') {
+              this.setState({ error: "" });
+              this.checker();
+            } else {
+              this.setState({ error: "Email has already been taken." });
+            }
           })
           .catch((error) => console.error(error))
       : this.setState({ error: "Please enter a valid email." });
   };
 
- validateEmail = (email) => {
-   var regex = /\S+@\S+\.\S+/;
-  return regex.test(email);
- };
- checker = (e) => {
-  if(this.props.username2&&this.props.email2&&!this.state.error&&!this.state.error2){document.getElementById("signupinformation").style.visibility="visible"}
-  else{document.getElementById("signupinformation").style.visibility="hidden"}
-}
+  validateEmail = (email) => {
+    var regex = /\S+@\S+\.\S+/;
+    return regex.test(email);
+  };
+  checker = (e) => {
+    if (
+      this.props.username2 &&
+      this.props.email2 &&
+      !this.state.error &&
+      !this.state.error2
+    ) {
+      document.getElementById("signupinformation").style.visibility = "visible";
+    } else {
+      document.getElementById("signupinformation").style.visibility = "hidden";
+    }
+  };
 
   render() {
-
     return (
       <div className="container_image">
         <div className="container_signup">
@@ -73,11 +84,12 @@ class Signup extends React.Component {
               width="60px"
               height="60px"
             />
-            <Link to="/form2" style={{ textDecoration: "none", visibility: "hidden"}} id="signupinformation">
-              <Button
-                type="submit"
-                className="button"
-              >
+            <Link
+              to="/form2"
+              style={{ textDecoration: "none", visibility: "hidden" }}
+              id="signupinformation"
+            >
+              <Button type="submit" className="button">
                 {" "}
                 Next
               </Button>
@@ -93,9 +105,7 @@ class Signup extends React.Component {
                 name="username"
                 onChange={(e) => {
                   this.checkuser(e);
-                  this.props.username([
-                    e.target.value
-                  ])
+                  this.props.username([e.target.value]);
                 }}
                 variant="outlined"
                 error={!!this.state.error2}
@@ -111,9 +121,7 @@ class Signup extends React.Component {
                 name="email"
                 onChange={(e) => {
                   this.checkemail(e);
-                  this.props.email([
-                    e.target.value
-                  ])
+                  this.props.email([e.target.value]);
                 }}
                 variant="outlined"
                 error={!!this.state.error}
@@ -138,15 +146,15 @@ class Signup extends React.Component {
 // Redux
 const mapStateToProps = (state) => {
   return {
-    username2:state.username2,
-    email2:state.email2,
+    username2: state.username2,
+    email2: state.email2,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     email: (x) => {
       dispatch(email(x));
-    },    
+    },
     username: (x) => {
       dispatch(username(x));
     },
