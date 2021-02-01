@@ -40,6 +40,8 @@ class Avatar extends Component {
           <Sidebar />
 
           <div id="avatar">
+          <p>Change your  profile image</p>
+
             <input
               type="text"
               id="newAvatar"

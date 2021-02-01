@@ -7,6 +7,8 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import PublishIcon from "@material-ui/icons/Publish";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { details, tweets } from "../../redux/actions";
+
 
 class Post extends React.Component {
   constructor(props) {
@@ -115,7 +117,7 @@ class Post extends React.Component {
                 style={{ cursor: "pointer" }}
               >
                 <h3>
-                  {this.props.username} . {this.props.time} . {this.props.date}
+                  {this.props.username}  |  {this.props.time}  |  {this.props.date}
                 </h3>
               </div>
               <div className="post__headerDescription">
@@ -202,7 +204,14 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    details: (x) => {
+      dispatch(details(x));
+    },
+    tweets: (x) => {
+      dispatch(tweets(x));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post);
