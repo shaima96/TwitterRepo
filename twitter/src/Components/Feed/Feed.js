@@ -1,58 +1,76 @@
 import React from "react";
-import FlipMove from 'react-flip-move'
 import Post from "./Post";
 import "./Feed.css";
-import './TweetBox.css'
-import { Avatar, Button } from '@material-ui/core'
-
-
-// import FlipMove from "react-flip-move";
+import "./TweetBox.css";
+import { Avatar, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { details, tweets } from "../../redux/actions";
 
 class Feed extends React.Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       tweets: [],
-      username: '',
-      post: '',
-      img: ''
-    }
+      username: "",
+      post: "",
+      img: "",
+      user: "",
+    };
   }
-  componentDidMount() {
-    fetch('https://twittrer.herokuapp.com/tweets',)
-      .then(response => response.json())
-      .then(result => {
-        this.setState({ 'tweets': result.data.reverse()})
-      })
-      .catch(err => {
-        console.error(err)
-      })
 
+  componentDidMount() {
+    var role = new FormData();
+    role.append("email", localStorage.getItem("email"));
+    const option = {
+      method: "POST",
+      body: role,
+    };
+    fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/email", option)
+      .then((response) => response.json())
+      .then((result) => {
+        this.props.details(result.data);
+        this.setState({ user: result.data });
+      })
+      .catch((err) => console.error(err));
+
+    fetch("https://twittrer.herokuapp.com/tweets")
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({ tweets: result.data.reverse() });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+      fetch("https://twittrer.herokuapp.com/tweet", option)
+      .then((response) => response.json())
+      .then((result) => {
+        this.props.tweets(result.data.reverse());
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   sendTweet = (e) => {
-    e.preventDefault()
-    var role = new FormData()
-    role.append("email", localStorage.getItem('email'))
-    role.append("tweet", document.getElementById('tweet').value)
-    role.append("img", document.getElementById('image').value)
+    e.preventDefault();
+    var role = new FormData();
+    role.append("email", localStorage.getItem("email"));
+    role.append("tweet", document.getElementById("tweet").value);
+    role.append("img", document.getElementById("image").value);
     var option = {
-      method: 'POST',
-      body: role
-    }
-    fetch('https://twittrer.herokuapp.com/tweets', option)
-      .then(response => response.text())
-      .then(result => {
-        console.log(result)
-        // this.setState({})
-        this.componentDidMount()
+      method: "POST",
+      body: role,
+    };
+    fetch("https://twittrer.herokuapp.com/tweets", option)
+      .then((response) => response.text())
+      .then((result) => {
+        this.componentDidMount();
       })
-      .catch(err => {
-        console.error(err)
-      })
-
-  }
+      .catch((err) => {
+        console.error(err);
+      });
+  };
   render() {
     return (
       <div className="feed">
@@ -60,32 +78,38 @@ class Feed extends React.Component {
           <h2>Home</h2>
         </div>
 
-        <div className='tweetBox'>
+        <div className="tweetBox">
           <form>
-            <div className='tweetBox__input'>
-              <Avatar src={this.state.img} />
-              <input
-                id='tweet' placeholder="What's happining?"
-                type='text'
-              />
+            <div className="tweetBox__input">
+              <Link to="/profile" onClick={this.visit}>
+                <Avatar src={this.state.user.avatar} />
+              </Link>
+              <input id="tweet" placeholder="What's happining?" type="text" />
             </div>
             <input
-              id='image'
-              className='tweetBox__imageInput'
+              id="image"
+              className="tweetBox__imageInput"
               placeholder="Enter image URL"
-              type='text' />
+              type="text"
+            />
 
             <Button
               onClick={this.sendTweet}
-              type='submit' className='tweet__tweetButton'> Tweet </Button>
+              type="submit"
+              className="tweet__tweetButton"
+            >
+              {" "}
+              Tweet{" "}
+            </Button>
           </form>
         </div>
-        <FlipMove>
+        <div>
           {this.state.tweets.map((post, i) => {
-            console.log(post)
             return (
               <Post
                 key={i}
+                id={post._id}
+                post={post}
                 username={post.username}
                 email={post.email}
                 text={post.tweet}
@@ -97,13 +121,26 @@ class Feed extends React.Component {
                 date={post.date}
                 time={post.time}
               />
-            )
+            );
           })}
-        </FlipMove>
-
+        </div>
       </div>
     );
   }
 }
 
-export default Feed;
+const mapStateToProps = (state) => {
+  return {};
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    details: (x) => {
+      dispatch(details(x));
+    },
+    tweets: (x) => {
+      dispatch(tweets(x));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Feed);

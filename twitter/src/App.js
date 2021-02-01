@@ -2,6 +2,9 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Profilepage from "./Components/Profile/Profilepage";
+import Avatar from "./Components/Profile/Avatar";
+import Cover from "./Components/Profile/Cover";
+import Bio from "../src/Components/Profile/Bio";
 import Homepage from "./Components/HomePage/Homepage";
 import Signup from "./Components/Signup/Signup";
 import Login from "./Components/Login/Login";
@@ -22,6 +25,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/homepage" component={Homepage} />
           <Route exact path="/profile" component={Profilepage} />
+          <Route exact path="/avatar" component={Avatar} />
+          <Route exact path="/cover" component={Cover} />
+          <Route exact path="/bio" component={Bio} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/forget" component={Forget} />

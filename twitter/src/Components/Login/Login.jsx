@@ -10,7 +10,6 @@ class Login extends React.Component {
       email: "",
       password: "",
       error: "",
-      redirect: false,
     };
   }
   handleChange = (e) => {
@@ -32,7 +31,7 @@ class Login extends React.Component {
         console.log(result);
         if (result.data) {
           localStorage.setItem("email", result.data);
-          this.setState({ redirect: true });
+          this.setState({})
         } else {
           this.setState({ error: "Invalid username or password" });
         }
@@ -45,7 +44,7 @@ class Login extends React.Component {
   };
   render() {
     const { email, password } = this.state;
-    if (this.state.redirect) {
+    if (localStorage.getItem('email')) {
       return <Redirect to="/homepage" />;
     } else {
       return (
