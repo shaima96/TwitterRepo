@@ -44,7 +44,7 @@ class FormFive extends React.Component {
     }
   };
   checkLength = (e) => {
-    if (e.target.value.length < 8) {
+    if (e.target.value?.length < 8) {
       this.setState({
         error:
           "Your password needs to be at least 8 characters. Please enter a longer one.",

@@ -17,25 +17,31 @@ class Post extends React.Component {
   }
 
   componentDidMount() {
-    var liked= false
-    var retweeted= false
-    var saved= false
-    for(var i=0;i<this.props.details2.likes.length;i++){
-      if(this.props.details2.likes[i]['_id']===this.props.id){
-        liked=true
+    var liked = false;
+    var retweeted = false;
+    var saved = false;
+    if (this.props.details2.likes) {
+      for (var i = 0; i < this.props.details2.likes.length; i++) {
+        if (this.props.details2.likes[i]["_id"] === this.props.id) {
+          liked = true;
+        }
       }
     }
-    for(i=0;i<this.props.details2.retweets.length;i++){
-      if(this.props.details2.retweets[i]['_id']===this.props.id){
-        retweeted=true
+    if (this.props.details2.retweets) {
+      for (i = 0; i < this.props.details2.retweets.length; i++) {
+        if (this.props.details2.retweets[i]["_id"] === this.props.id) {
+          retweeted = true;
+        }
       }
     }
-    for(i=0;i<this.props.details2.saves.length;i++){
-      if(this.props.details2.saves[i]['_id']===this.props.id){
-        saved=true
+    if (this.props.details2.saves) {
+      for (i = 0; i < this.props.details2.saves.length; i++) {
+        if (this.props.details2.saves[i]["_id"] === this.props.id) {
+          saved = true;
+        }
       }
     }
-    this.setState({liked,retweeted,saved})
+    this.setState({ liked, retweeted, saved });
   }
 
   visit = (e) => {
@@ -45,24 +51,27 @@ class Post extends React.Component {
       method: "POST",
       body: role,
     };
-    fetch("https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/email", option)
-    .then((response) => response.json())
-    .then((result) => {
-      fetch(
-        "https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweet",
-        option
-      )
-        .then((response2) => response2.json())
-        .then((result2) => {
-          this.props.details(result.data);
-          this.props.tweets(result2.data.reverse());
-          this.setState({ redirect: true });
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    })
-    .catch((err) => console.error(err));
+    fetch(
+      "https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/email",
+      option
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        fetch(
+          "https://cors-anywhere.herokuapp.com/https://twittrer.herokuapp.com/tweet",
+          option
+        )
+          .then((response2) => response2.json())
+          .then((result2) => {
+            this.props.details(result.data);
+            this.props.tweets(result2.data.reverse());
+            this.setState({ redirect: true });
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      })
+      .catch((err) => console.error(err));
   };
 
   do = (x, y) => {
@@ -117,7 +126,7 @@ class Post extends React.Component {
             <div className="post__footer">
               <div className="blueicon" onClick={this.comment}>
                 <ChatBubbleOutlineIcon fontSize="small" />{" "}
-                {this.props.comments.length}
+                {this.props.comments ? this.props.comments.length : 0}
               </div>
               {this.state.retweeted ? (
                 <div
@@ -127,7 +136,7 @@ class Post extends React.Component {
                     this.do("unretweet", "retweeted");
                   }}
                 >
-                  <RepeatIcon fontSize="small" /> {this.props.retweets+1}
+                  <RepeatIcon fontSize="small" /> {this.props.retweets + 1}
                 </div>
               ) : (
                 <div
@@ -147,7 +156,7 @@ class Post extends React.Component {
                     this.do("unlike", "liked");
                   }}
                 >
-                  <FavoriteBorderIcon fontSize="small" /> {this.props.likes+1}
+                  <FavoriteBorderIcon fontSize="small" /> {this.props.likes + 1}
                 </div>
               ) : (
                 <div
@@ -193,9 +202,7 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = (dispatch) => {
-  return {
-
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post);

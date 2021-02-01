@@ -23,9 +23,9 @@ class Signup extends React.Component {
       method: "POST",
       body: row,
     })
-      .then((response) => response.json())
+      .then((response) => response.text())
       .then((result) => {
-        if (result.data) {
+        if (result==='no') {
           this.setState({ error2: "" });
           this.checker();
         } else {
@@ -43,9 +43,9 @@ class Signup extends React.Component {
           method: "POST",
           body: row,
         })
-          .then((response) => response.json())
+          .then((response) => response.text())
           .then((result) => {
-            if (result.data) {
+            if (result==='no') {
               this.setState({ error: "" });
               this.checker();
             } else {
